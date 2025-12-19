@@ -42,16 +42,54 @@ namespace Esimene_projekt
             //string sõna = "abc"; //very gud
 
             //Programm 2
-            Console.WriteLine("Tere tulemast baari, palun sisestage oma vanus");
-            int vanus;
-            vanus = int.Parse(Console.ReadLine());
-            if (vanus >= 18)
+            //Console.WriteLine("Tere tulemast baari, palun sisestage oma vanus");
+            //int vanus;
+            //vanus = int.Parse(Console.ReadLine());
+            //if (vanus >= 18)
+            //{
+            //    Console.WriteLine("Tere, nautige meie mojitot 🍋‍");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Vabandust, alaealisi sisse ei lasta, head päeva");
+
+            //Programm 3 vaheajaks
+            //string KasutajaNimi = "";
+            //string Parool = "";
+            //Console.WriteLine("Tere, sisse logimiseks palun sisestage oma nimi");
+            //KasutajaNimi = Console.ReadLine();
+            //if (KasutajaNimi == "user1")
+            //{
+            //    Console.WriteLine("Tere user1, palun sisestage oma parool");
+            //    Parool = Console.ReadLine();
+            //    if (Parool == "qwerty")
+            //    {
+            //        Console.WriteLine("Tere tulemast user1, olete edukalt sisse logitud");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Kasutajanimi või parool on vale, sissepääs keelatud");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Kasutajanimi või parool on vale, sissepääs keelatud");
+            //}
+
+            //Programm 3 vaheajaks aga improved
+            string KasutajaNimi = "";
+            string Parool = "";
+            Console.WriteLine("Tere, sisse logimiseks palun sisestage oma nimi");
+            KasutajaNimi = Console.ReadLine();
+            Console.WriteLine("Palun sisestage oma parool");
+            Parool = Console.ReadLine();
+            if (KasutajaNimi == "user1" && Parool == "qwerty")
             {
-                Console.WriteLine("Tere, nautige meie mojitot 🍋‍");
+                Console.WriteLine("Olete edukalt sisse logitud, user1!");
             }
             else
             {
-                Console.WriteLine("Vabandust, alaealisi sisse ei lasta, head päeva");
+                Console.WriteLine("Kasutajanimi või parool on vale, sissepääs keelatud.");
             }
         }
     }
