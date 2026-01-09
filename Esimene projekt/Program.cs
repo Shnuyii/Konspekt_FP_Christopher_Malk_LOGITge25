@@ -27,19 +27,7 @@ namespace Esimene_projekt
             //kontojääk = kontojääk + boonus;
             //    Console.WriteLine("minu lõppväljavõte on: " + kontojääk + " puulehte");
 
-            //// andmetüübid
-            //string tekst = "mingi loetav tekst";
-            //char täht = 'a';
-            //int arv = 1;
-            //float komakohaga = 2.5f; //32bit
-            //double suuremkomakohaga = 1.5d; //64bit
-            //decimal kümnendsüsteemikomakohaga = 1.5M;
-            //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
-            //var y = "tekst";
-            //bool yesorno = false; //true or false
-
-            ////string string = "abc"; //bad
-            //string sõna = "abc"; //very gud
+            
 
             //Programm 2
             //Console.WriteLine("Tere tulemast baari, palun sisestage oma vanus");
@@ -116,28 +104,72 @@ namespace Esimene_projekt
             //    Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
             //}
 
-            //
+            //Näiteülesanne 6
+            Console.WriteLine("Palun sisesta oma vanus");
+            int isikuVanus = 0;
+            isikuVanus = int.Parse(Console.ReadLine());
+            if (isikuVanus <=0)
+            {
+                Console.WriteLine("Ajarändureid me ei teeninda");
+            }
+            else if (isikuVanus > 0 && isikuVanus < 18)
+            {
+                Console.WriteLine("Palun sisesta oma nimi");
+                string kasutajaNimi = "";
+                kasutajaNimi = Console.ReadLine();
+                Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsuge siia oma lapsevanem");
+            }
+            else
+            {
+                Console.WriteLine("Palun kirjuta siia oma Eesnimi");
+                string eesNimi = "";
+                eesNimi = Console.ReadLine();
+                Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi");
+                string perekonnaNimi = "";
+                perekonnaNimi = Console.ReadLine();
+                if (eesNimi == "" || perekonnaNimi == "")
+                {
+                    Console.WriteLine("Sisestama pidi mõlemad nimed");
+                }
+                else
+                {
+                    Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
+                }
+            }
 
 
-            //*
-            //Teooria
+                //*
+                //Teooria
 
-            //int mingiArv = 4;
-            //int mingiArv += 15;
+                //// andmetüübid
+                //string tekst = "mingi loetav tekst";
+                //char täht = 'a';
+                //int arv = 1;
+                //float komakohaga = 2.5f; //32bit
+                //double suuremkomakohaga = 1.5d; //64bit
+                //decimal kümnendsüsteemikomakohaga = 1.5M;
+                //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
+                //var y = "tekst";
+                //bool yesorno = false; //true or false
 
-            //Console.WriteLine("Palun sisesta oma vanus");
-            //int kasutajavanus = int.Parse(Console.ReadLine());
-            //Console.WriteLine("Palun sisesta om vanavanema vanus");
-            //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
-            //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
-            //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
-            //Console.WriteLine("Kui palju vanem sa nüüd oled?");
-            //kasutajavanus += int.Parse(Console.ReadLine());
-            //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+                ////string string = "abc"; //bad
+                //string sõna = "abc"; //very gud
+                //int mingiArv = 4;
+                //int mingiArv += 15;
 
-            //* -= O M I S T U S O P E R A A T O R I D =-   */
-            // =    -> üksik võrdusmärk omistab muutuja sisse väärtuse, mida adresseritakse muutuja enda nimega
-            int muutuja = 1;
+                //Console.WriteLine("Palun sisesta oma vanus");
+                //int kasutajavanus = int.Parse(Console.ReadLine());
+                //Console.WriteLine("Palun sisesta om vanavanema vanus");
+                //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
+                //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
+                //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
+                //Console.WriteLine("Kui palju vanem sa nüüd oled?");
+                //kasutajavanus += int.Parse(Console.ReadLine());
+                //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+
+                //* -= O M I S T U S O P E R A A T O R I D =-   */
+                // =    -> üksik võrdusmärk omistab muutuja sisse väärtuse, mida adresseritakse muutuja enda nimega
+                int muutuja = 1;
             // +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
             muutuja += 2;
             // -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
