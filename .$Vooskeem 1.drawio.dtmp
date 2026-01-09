@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram name="Leht-1" id="fxFSX92x7SCfnnV26u1d">
-    <mxGraphModel dx="2066" dy="1201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF, #2e2d2d)" math="0" shadow="0" adaptiveColors="auto">
+    <mxGraphModel dx="5903" dy="3431" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF, #2e2d2d)" math="0" shadow="0" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,6 +46,9 @@
         </mxCell>
         <mxCell id="hjCNSSIAmfX4yqu6X1FR-28" value="Kas muutujas &quot;isikuVanus&quot; on väärtus väiksem või võrdne 0 arvuga" style="rhombus;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;rounded=1;hachureGap=4;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;shadow=1;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
           <mxGeometry x="54" y="705" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZHlpduKoMlisMu5S8i8m-75" style="edgeStyle=orthogonalEdgeStyle;rounded=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" edge="1" parent="1" source="hjCNSSIAmfX4yqu6X1FR-33" target="ZHlpduKoMlisMu5S8i8m-68">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="hjCNSSIAmfX4yqu6X1FR-33" value="Kuva kasutajale tekst: &quot;Ajarändureid me ei teeninda&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=Architects Daughter;rounded=1;hachureGap=4;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;shadow=1;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
           <mxGeometry x="514" y="715" width="260" height="60" as="geometry" />
