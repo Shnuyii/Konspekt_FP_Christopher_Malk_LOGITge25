@@ -98,15 +98,34 @@ namespace Esimene_projekt
             //int mingiArv = 4;
             //int mingiArv += 15;
 
-            Console.WriteLine("Palun sisesta oma vanus");
-            float kasutajavanus = float.Parse(Console.ReadLine());
-            Console.WriteLine("Palun sisesta om vanavanema vanus");
-            int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
-            int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
-            Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
-            Console.WriteLine("Kui palju vanem sa nüüd oled?");
-            kasutajavanus += int.Parse(Console.ReadLine());
-            Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+            //Console.WriteLine("Palun sisesta oma vanus");
+            //int kasutajavanus = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisesta om vanavanema vanus");
+            //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
+            //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
+            //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
+            //Console.WriteLine("Kui palju vanem sa nüüd oled?");
+            //kasutajavanus += int.Parse(Console.ReadLine());
+            //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+
+            //* -= O M I S T U S O P E R A A T O R I D =-   */
+            // =    -> üksik võrdusmärk omistab muutuja sisse väärtuse, mida adresseritakse muutuja enda nimega
+            int muutuja = 1;
+            // +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
+            muutuja += 2;
+            // -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
+            muutuja -= 3;
+            // *=   -> võrdusmärk mille ees on korrutusmärk, automaatselt korrutab muutuja sisu võrdusmärgi teisel pool oleva väärtuse kordi
+            muutuja *= 4;
+            // /=   -> võrdusmärk mille ees on jagamismärk, automaatselt jagab muutuja sisu võrdusmärgi teisel pool oleva väärtuse osadeks
+            muutuja /= 5;
+            // %=   -> võrdusmärk mille ees on modulus, automaatselt jätab muutujasse jäägi
+            muutuja %= 6;
+
+            // ++   -> kiirtehe, mis muutujale liidab ainult ühe juurde
+            muutuja++;
+            // ++   -> kiirtehe, mis muutujale lahutab ainult ühe maha
+            muutuja--;
 
 
         }
