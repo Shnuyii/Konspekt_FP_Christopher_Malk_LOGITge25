@@ -105,37 +105,37 @@ namespace Esimene_projekt
             //}
 
             //Näiteülesanne 6
-            Console.WriteLine("Palun sisesta oma vanus");
-            int isikuVanus = 0;
-            isikuVanus = int.Parse(Console.ReadLine());
-            if (isikuVanus <=0)
-            {
-                Console.WriteLine("Ajarändureid me ei teeninda");
-            }
-            else if (isikuVanus > 0 && isikuVanus < 18)
-            {
-                Console.WriteLine("Palun sisesta oma nimi");
-                string kasutajaNimi = "";
-                kasutajaNimi = Console.ReadLine();
-                Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsuge siia oma lapsevanem");
-            }
-            else
-            {
-                Console.WriteLine("Palun kirjuta siia oma Eesnimi");
-                string eesNimi = "";
-                eesNimi = Console.ReadLine();
-                Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi");
-                string perekonnaNimi = "";
-                perekonnaNimi = Console.ReadLine();
-                if (eesNimi == "" || perekonnaNimi == "")
-                {
-                    Console.WriteLine("Sisestama pidi mõlemad nimed");
-                }
-                else
-                {
-                    Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
-                }
-            }
+            //Console.WriteLine("Palun sisesta oma vanus");
+            //int isikuVanus = 0;
+            //isikuVanus = int.Parse(Console.ReadLine());
+            //if (isikuVanus <=0)
+            //{
+            //    Console.WriteLine("Ajarändureid me ei teeninda");
+            //}
+            //else if (isikuVanus > 0 && isikuVanus < 18)
+            //{
+            //    Console.WriteLine("Palun sisesta oma nimi");
+            //    string kasutajaNimi = "";
+            //    kasutajaNimi = Console.ReadLine();
+            //    Console.WriteLine($"Kallis {kasutajaNimi}, palun kutsuge siia oma lapsevanem");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Palun kirjuta siia oma Eesnimi");
+            //    string eesNimi = "";
+            //    eesNimi = Console.ReadLine();
+            //    Console.WriteLine("Palun kirjuta siia ka oma Perekonnanimi");
+            //    string perekonnaNimi = "";
+            //    perekonnaNimi = Console.ReadLine();
+            //    if (eesNimi == "" || perekonnaNimi == "")
+            //    {
+            //        Console.WriteLine("Sisestama pidi mõlemad nimed");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}!");
+            //    }
+            //}
 
 
             //*
