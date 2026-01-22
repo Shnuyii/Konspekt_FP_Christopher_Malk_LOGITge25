@@ -295,7 +295,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // ///          - Funktsiooni summary kommentaar, kirjeldab meetodeid, mille tekst kuvatakse välja tooltipina
             //          - taane - aitab arendajal aru saada, kuskohas millise koodiploki sees kood parasjagu asub, ning aitab järge pidada
 
-            //// andmetüübid
+            //*  -= A N D M E T Ü Ü B I D =-    *//
             //string tekst = "mingi loetav tekst";
             //char täht = 'a';
             //int arv = 1;
@@ -309,6 +309,22 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             ///* -= M U U T U J A D =-   */
             ////string string = "abc"; //bad
             //string sõna = "abc"; //very gud
+
+            // -------------------------------------------------------
+
+            ///* -= K A I T S T U D  S Õ N A D =-       */
+            // Kaitstud sõnad on kindlad nimisõnad/tegusõnad, mida C# kasutab oma koodistruktuuride tähistamiseks et ära hoida keerukat näpuga jälje ajamist, ning kompilaatori töö lihtsustamist
+            // ei saa järgnevaid sõnu muutuja nimetusel kasutada, nendeks on:
+            // abstract     as          base        bool        break       byte        case        catch       char            checked         class       count       continue
+            // decimal      default     delegate    do          double      else        enum        event       explicit        extern          false       finally     fixed
+            // float        for         foreach     goto        if          implicit    in          int         interface       internal        is          lock        long
+            // namespace    new         null        object      operator    out         override    params      private         protected       public      readonly    ref
+            // return       sbyte       sealed      short       sizeof      stackalloc  static      string      struct          switch          this        throw       try
+            // true         typeof      uint        ulong       unchecked   unsafe      ushort      using       virtual         void            volatile    while
+
+            // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
             //int mingiArv = 4;
             //int mingiArv += 15;
 
