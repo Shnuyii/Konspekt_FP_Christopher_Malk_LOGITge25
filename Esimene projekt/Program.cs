@@ -373,6 +373,24 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             {
 
             }
+            /* -= T I N G I M U S L A U S E - SWITCHCASE =-   */
+            int option = 3; // --------
+            switch (option) // "Switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saad if-elseif-else asemel kasutada. sulgude vahel käib muutuja nimi, mille põhjal tingimuslik 
+                            // ümberlülitus toimub. Siin sulgude vahel ei ole tingimus ise, vaid kõige kontrollitav muutuja, või omakorda sulgude vahel muu tingimuse avaldis. Pärast lülitusvalikut tuleb koodiplokk
+            {
+                case 1:     // koodiploki sees on erinevad juhtumid või vasted väärtuste korral mis võivad olla lülitusvalikus oleva muutuja sees
+                            // Iga juhtum/vaste kirjutatakase kaitstud sõnaga "case" ning väärtus selle järel millele see juhtum vastab. antud juhul see juhtum toimib, kui muutujas "option" on täisarv 1. Peale võimalikku väärtust on koolon väljendades juhtumi täitumisel tehtavad programmikoodi.
+                    Console.WriteLine("Nope"); //antud juhul kuvatakse juhtumi 1 puhul kasutajale sõnum
+                    break;
+                case 2:     // Juhtumeid võib olla mitmeid, antud juhul on siin näidises neid 3+1 (3 kindlat väärtust ja 1 vaikeväärtus)
+                    break;
+                case 3:
+                    Console.WriteLine(option);  // Antud juhul kuvatakse juhumi 3 puhul kasutajale muutujas "option" asuv väärtus välja.
+                    break;    
+                default:    //default juhtum täitub siis, kui ülejäänud kirjeldatud juhtumid ei kata switchi lülitusvalikus olevas muutujas asuval väärtust. Toimib nagu else, kui erinevalt if-elseif-else struktuurist võib default olla ka alguses
+                    break;  // kui antud juhtumi tegevus on tehtud, väljutakse mitte ainult juhtumist, vaid ka kogu käesolevat switch-case tingimustikust. Peale breaki on lauselõpumärk.
+            }
+
 
             /* -= T E I S E N D A M I N E / C A S T I M I N E =-   */
             // automaatne castimine toimub siis, kui teisendatakse väiksemast andmetüübist suuremasse, sellisel juhul programmeerija spetsiifiliselt castima ei pea.
