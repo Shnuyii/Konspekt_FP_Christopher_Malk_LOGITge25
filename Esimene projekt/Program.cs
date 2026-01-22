@@ -218,55 +218,55 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //}
             
             //Kalkulaator programm if ja else ifiga
-            Console.WriteLine("Palun sisesta esimene arv.");
-            float arv1 = 0;
-            arv1 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisesta esimene arv.");
+            //float arv1 = 0;
+            //arv1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Palun sisestada teine arv.");
-            float arv2 = 0;
-            arv2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisestada teine arv.");
+            //float arv2 = 0;
+            //arv2 = float.Parse(Console.ReadLine());
 
-            string tehteTüüp = "";
-            Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
-            tehteTüüp = Console.ReadLine();
+            //string tehteTüüp = "";
+            //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
+            //tehteTüüp = Console.ReadLine();
 
-            double tulemus = 0.0d;
+            //double tulemus = 0.0d;
 
 
-            if (tehteTüüp == "+")
-            {
-                tulemus = arv1 + arv2;
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else if (tehteTüüp == "-")
-            {
-                tulemus = arv1 - arv2;
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else if (tehteTüüp == "*")
-            {
-                tulemus = arv1 * arv2;
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else if (tehteTüüp == "/")
-            {
-                tulemus = arv1 / arv2;
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else if (tehteTüüp == "^")
-            {
-                tulemus = Math.Pow(arv1, arv2);
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else if (tehteTüüp == "v")
-            {
-                tulemus = Math.Pow(arv1, 1 / arv2);
-                Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            }
-            else
-            {
-                Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
-            }
+            //if (tehteTüüp == "+")
+            //{
+            //    tulemus = arv1 + arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "-")
+            //{
+            //    tulemus = arv1 - arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "*")
+            //{
+            //    tulemus = arv1 * arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "/")
+            //{
+            //    tulemus = arv1 / arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "^")
+            //{
+            //    tulemus = Math.Pow(arv1, arv2);
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "v")
+            //{
+            //    tulemus = Math.Pow(arv1, 1 / arv2);
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
+            //}
             
 
 
