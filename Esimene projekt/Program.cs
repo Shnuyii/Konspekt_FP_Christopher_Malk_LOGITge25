@@ -428,6 +428,31 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //Suuremast väiksemasse teisendus kaotab andmeresolutsiooni,
             //kaotatud andmeid ei saa tagasi suuremasse andmetüüpi castimisega tagasi
 
+            // Parsimine on tekstist katse teisendada mingit tüüpi arvandmeid. Teisendus toimub küsides mingist andmetüübist talle siiseehtatud
+            // meetodi "Perse()" abil mingist sõnest arvandmeid.
+            string seeontekst = "";                         //Mingisugune sõne mis omab endas potentsiaalselt mingit arvulist väärtust
+            int teisendatud = int.Parse(seeontekst);        //muutuja "teisendatud" kuhu omistatakse "Prase()" meetodi abil sonest arvväärtust
+            Console.WriteLine(teisendatud);                 //teisenduse väljakuvamine
+
+            // Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
+            // algne väärtus/false
+            string seeOnTekst = "1";                                        //Mingisugune sõne mis omab endas potentsiaalselt mingit arvulist väärtust
+            Console.WriteLine(int.TryParse(seeOnTekst, out int result));    //teisenduse tulemuse väljakuvamine
+
+            //konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüüpi. Selle jaoks on olemas moodul "Convert".
+            //Convert moodulis on sarnaselt arvandmetüüpides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid
+            var mingiinfo = "65.44";                                    //On olemas mingisugune teisendamist vajav info
+            string mingiinfoTekst = Convert.ToString(mingiinfo);        //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
+            char mingiInfoChar = Convert.ToChar(mingiinfo);             //teisendus täheks
+            int mingiInfoInt = Convert.ToInt32(mingiinfo);              //teisendus int andmetüüpi
+            long mingiInfoLong = Convert.ToInt64(mingiinfo);            //teisendus long andmetüüpi
+            float mingiInfoFloat = Convert.ToSingle(mingiinfo);         //teisendus float andmetüüpi
+            double mingiInfoDouble = Convert.ToDouble(mingiinfo);       //teisendus double andmetüüpi
+            decimal mingiInfoDecimal = Convert.ToDecimal(mingiinfo);    //teisendus decimaliks
+            byte mingiInfoByte = Convert.ToByte(mingiinfo);             //teisendus baidiks
+            bool mingiInfoBool = Convert.ToBoolean(mingiinfo);          //teisendus booleani
+
+
         }
     }
 }
