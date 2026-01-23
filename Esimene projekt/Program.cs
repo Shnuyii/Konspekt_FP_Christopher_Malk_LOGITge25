@@ -519,6 +519,33 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //byte mingiInfoByte = Convert.ToByte(mingiinfo);             //teisendus baidiks
             //bool mingiInfoBool = Convert.ToBoolean(mingiinfo);          //teisendus booleani
 
+            /* -= T S Ü K L I D =-   */
+
+            //Tsüklid on programmeerimises viis, kuidas automatiseerida korduv tegevus ära, see aitab hoida andmemahtu kokku, programmeerija sama
+            //koodi mitu korda kirjutamist, ning väldib ka kordustest tekkinud vigu. C# on neli peamist tsükli liiki -
+            // 1. do-while
+            // 2. while
+            // 3. for
+            // 4. foreach
+            // Tsüklitel on 3 peamist komponenti - käsklus ise, tsükli tingimus ja tehtav kood.
+
+            /* -= T S Ü K L I D   DO-WHILE =-   */
+
+            // Do-While tsükkel erineb kõigist teistest tsüklitest sellega, et tingimusekontroll toimub pärast esimest tegevusringi, kõikides
+            // teistes tsüklites toimub tingimusekontroll enne esimest ringi.
+            int tsükliMuutuja1 = 0;                 //Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust
+                                                    //ehk tsüklimuutuja
+            do                                      //"do" on kaitstud sõna, mis alustab do while tsüklit, sellele järgneb tsüklis tehtav koodiplokk
+                                                    //ning mis esimene ring täidetakse ilma tingimuse kontrollita
+            {
+                Console.WriteLine(tsükliMuutuja1);  //koodiploki sees olev tegevus, antud juhul kuvatakse tsüklimuutuja arv välja
+                tsükliMuutuja1++;                   //ning tsüklimuutuja suurendatakse
+                //ILMA TSÜKLIMUUTUJA KAASAMISETA TSÜKLI TÖÖSSE, KÄIB TSÜKKEL RINGI LÕPMATULT, TSÜKLIMUUTUJA TULEB MINGIL KUJUL MUUTA KAS KAUDSELT VÕI
+                //OTSESELT, ET SÜSTEEM SAAKS EDASI TEISTE TEGEVUSTE JUURDE MINNA, ILMA SELLETA SEE EI OLE VÕIMALIK
+            } while (tsükliMuutuja1 != 5);          //*while* on kaitstud sõna mis do-while tsükli lõpetab, pärast seda toimub esimene tingimuse
+                                                    //kontroll, kus kontrollitakse tsükli töösse kaasatud muutuja olukorda, kui tingimus täitub
+                                                    //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse tingimust uuesti.
+                                                    //antud juhul tsükkel toimub niikaua, kuni tsüklimuutuja ei ole 5, ta saab olle 4 ja 6 ja ükskõik mis muu, aga mitte 5
 
         }
     }
