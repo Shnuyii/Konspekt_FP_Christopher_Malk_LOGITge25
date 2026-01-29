@@ -421,7 +421,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
 
             // ++   -> kiirtehe, mis muutujale liidab ainult ühe juurde
             muutuja++;
-            // ++   -> kiirtehe, mis muutujale lahutab ainult ühe maha
+            // ++   -> kiirtehe, mis muutujast lahutab ainult ühe maha
             muutuja--;
 
 
@@ -499,7 +499,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // meetodi "Perse()" abil mingist sõnest arvandmeid.
             //string seeontekst = "";                         //Mingisugune sõne mis omab endas potentsiaalselt mingit arvulist väärtust
             //int teisendatud = int.Parse(seeontekst);        //muutuja "teisendatud" kuhu omistatakse "Prase()" meetodi abil sonest arvväärtust
-            //Console.WriteLine(teisendatud);                 //teisenduse väljakuvamine
+            //Console.WriteLine(teisendatud );                 //teisenduse väljakuvamine
 
             // Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
             // algne väärtus/false
