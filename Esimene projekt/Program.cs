@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.Design;
 using System.Threading.Channels;
 using System;
-using System.Net.Http.Headers; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
+using System.Net.Http.Headers;
+using System.ComponentModel.DataAnnotations; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
 
 namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "Esimene_projekt"
 {
@@ -225,122 +226,122 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             float backToFloat = backToLong;
             double backToDouble = backToFloat;
 
-            //* Näiteülesanne 4 *//
-            //Console.WriteLine("Palun sisesta oma vanus");
-            //int kasutajavanus = int.Parse(Console.ReadLine());
-            //Console.WriteLine("Palun sisesta om vanavanema vanus");
-            //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
-            //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
-            //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
-            //Console.WriteLine("Kui palju vanem sa nüüd oled?");
-            //kasutajavanus += int.Parse(Console.ReadLine());
-            //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+        //* Näiteülesanne 4 *//
+        //Console.WriteLine("Palun sisesta oma vanus");
+        //int kasutajavanus = int.Parse(Console.ReadLine());
+        //Console.WriteLine("Palun sisesta om vanavanema vanus");
+        //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
+        //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
+        //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
+        //Console.WriteLine("Kui palju vanem sa nüüd oled?");
+        //kasutajavanus += int.Parse(Console.ReadLine());
+        //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
 
-            //Console.WriteLine("Palun sisesta esimene arv.");
-            //float arv1 = 0;
-            //arv1 = float.Parse(Console.ReadLine());
+        //Console.WriteLine("Palun sisesta esimene arv.");
+        //float arv1 = 0;
+        //arv1 = float.Parse(Console.ReadLine());
 
-            //Console.WriteLine("Palun sisestada teine arv.");
-            //float arv2 = 0;
-            //arv2 = float.Parse(Console.ReadLine());
+        //Console.WriteLine("Palun sisestada teine arv.");
+        //float arv2 = 0;
+        //arv2 = float.Parse(Console.ReadLine());
 
-            //string tehteTüüp = "";
-            //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
-            //tehteTüüp = Console.ReadLine();
+        //string tehteTüüp = "";
+        //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
+        //tehteTüüp = Console.ReadLine();
 
-            //double tulemus = 0.0d;
+        //double tulemus = 0.0d;
 
-            //Kalkulaator programm
-            //if (tehteTüüp != "")
-            //{
-            //    switch (tehteTüüp)
-            //    {
-            //        default:
-            //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
-            //            break;
-            //        case "+":
-            //            tulemus = arv1 + arv2;
-            //            break;
-            //        case "*":
-            //            tulemus = arv1 * arv2;
-            //            break;
-            //        case "-":
-            //            tulemus = arv1 - arv2;
-            //            break;
-            //        case "/":
-            //            tulemus = arv1 / arv2;
-            //            break;
-            //        case "^":
-            //            tulemus = Math.Pow(arv1, arv2);
-            //            break;
-            //        case "v":
-            //            tulemus = Math.Pow(arv1, 1 / arv2);
-            //            break;
-            //    }
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} =  {tulemus}");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
-            //}
-            
-            //Kalkulaator programm if ja else ifiga
-            //Console.WriteLine("Palun sisesta esimene arv.");
-            //float arv1 = 0;
-            //arv1 = float.Parse(Console.ReadLine());
+        //Kalkulaator programm
+        //if (tehteTüüp != "")
+        //{
+        //    switch (tehteTüüp)
+        //    {
+        //        default:
+        //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+        //            break;
+        //        case "+":
+        //            tulemus = arv1 + arv2;
+        //            break;
+        //        case "*":
+        //            tulemus = arv1 * arv2;
+        //            break;
+        //        case "-":
+        //            tulemus = arv1 - arv2;
+        //            break;
+        //        case "/":
+        //            tulemus = arv1 / arv2;
+        //            break;
+        //        case "^":
+        //            tulemus = Math.Pow(arv1, arv2);
+        //            break;
+        //        case "v":
+        //            tulemus = Math.Pow(arv1, 1 / arv2);
+        //            break;
+        //    }
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} =  {tulemus}");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
+        //}
 
-            //Console.WriteLine("Palun sisestada teine arv.");
-            //float arv2 = 0;
-            //arv2 = float.Parse(Console.ReadLine());
+        //Kalkulaator programm if ja else ifiga
+        //Console.WriteLine("Palun sisesta esimene arv.");
+        //float arv1 = 0;
+        //arv1 = float.Parse(Console.ReadLine());
 
-            //string tehteTüüp = "";
-            //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
-            //tehteTüüp = Console.ReadLine();
+        //Console.WriteLine("Palun sisestada teine arv.");
+        //float arv2 = 0;
+        //arv2 = float.Parse(Console.ReadLine());
 
-            //double tulemus = 0.0d;
+        //string tehteTüüp = "";
+        //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
+        //tehteTüüp = Console.ReadLine();
 
-
-            //if (tehteTüüp == "+")
-            //{
-            //    tulemus = arv1 + arv2;
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else if (tehteTüüp == "-")
-            //{
-            //    tulemus = arv1 - arv2;
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else if (tehteTüüp == "*")
-            //{
-            //    tulemus = arv1 * arv2;
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else if (tehteTüüp == "/")
-            //{
-            //    tulemus = arv1 / arv2;
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else if (tehteTüüp == "^")
-            //{
-            //    tulemus = Math.Pow(arv1, arv2);
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else if (tehteTüüp == "v")
-            //{
-            //    tulemus = Math.Pow(arv1, 1 / arv2);
-            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
-            //}
-            
+        //double tulemus = 0.0d;
 
 
-            //*
-            //Teooria
+        //if (tehteTüüp == "+")
+        //{
+        //    tulemus = arv1 + arv2;
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else if (tehteTüüp == "-")
+        //{
+        //    tulemus = arv1 - arv2;
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else if (tehteTüüp == "*")
+        //{
+        //    tulemus = arv1 * arv2;
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else if (tehteTüüp == "/")
+        //{
+        //    tulemus = arv1 / arv2;
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else if (tehteTüüp == "^")
+        //{
+        //    tulemus = Math.Pow(arv1, arv2);
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else if (tehteTüüp == "v")
+        //{
+        //    tulemus = Math.Pow(arv1, 1 / arv2);
+        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
+        //}
 
-            https://meet.google.com/qjt-wofj-gdb
+
+
+        //*
+        //Teooria
+
+        https://meet.google.com/qjt-wofj-gdb
 
             ///* -= S Ü N T A K S =-   */
             //Console.WriteLine("Ommik"); // <-- "1"
@@ -372,6 +373,31 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
             //var y = "tekst";
             //bool yesorno = false; //true or false
+
+            //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
+            //1. Massiiv
+
+            /* 1 - MASSIIV */
+            // [] - > Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. massiivi tähistatakse kantsulgudega.
+            //        Massiive saab olla ükskõik millist lihtandmetüüpi massiive. massiivi tekitamisel peab ära ütlema kui pikk või kui suur
+            //        vastav massiiv on. kuigi massiivis saab olla lihtandmetüübid, saab massiive moodustada ka teistel massiividest ja muudest
+            //        komposiitandmetüüpidest. kui on moodustatud massiiv mis koosneb teistest massiividest on tegu mitmedimensioonilise massiiviga.
+            //        näiteks on 20 massiiv selline massiiv kus on sees omakorda veel kaks lihtandmetüübist koosnevat massiivi, näiteks float.
+            // Esimene tekitusviis:
+            int[] uusMassiiv = new int[3];  //andmetüüp int väljendab, et tegu on täisarvutüüpi andmega, mis on massiiv, ja omab endas täisarve
+                                            //muutuja nimi on "uusMassiiv" ning võrdusmärgi taga omistatakse sinna massiiv kolme elemendiga,
+                                            //kus mitte ükski element hetkel veel väärtust ei oma. kui mitu elementi väljendatakse kantsulgude vahel,
+                                            //peale andmetüüpi ja peale kaitstud sõna "new". New ütleb, et tegu on uue väärtusega selle muutuja sees.
+            // Teine tekitusviis
+            int[] uusMassiiv2 = [1, 2, 3];  //Teine masiivi tekitusviis, kus massiivi pikkuse sätestamise asemel antakse muutujasse kohe kindlate
+                                            //väärtusega elemedid kaasa. Massiivi pikkus sätestama ei pea, kuna see tuletatakse sisestatud
+                                            //elementide arvust.
+
+            // - - Massiivi sisemised meetodid - -
+            int kuiPaljuOn = uusMassiiv.Length;     //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
+                                                    //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
+                                                    //väärtus muutujasse "kuiPaljuOn". väärtus saab olla ainult täisarv, sest poolikuid või osalisi
+                                                    //elemente ei ole olemas
 
             ///* -= M U U T U J A D =-   */
             ////string string = "abc"; //bad
@@ -546,6 +572,42 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                     //kontroll, kus kontrollitakse tsükli töösse kaasatud muutuja olukorda, kui tingimus täitub
                                                     //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse tingimust uuesti.
                                                     //antud juhul tsükkel toimub niikaua, kuni tsüklimuutuja ei ole 5, ta saab olle 4 ja 6 ja ükskõik mis muu, aga mitte 5
+
+            /* -= T S Ü K L I D   WHILE =-   */
+
+            // While tsükkel on kõige tüüpilisem laadi tsükkel, tal on tingimusekontroll esimese ringi alguses, kuid tsükkel ei oma sisseehitatud tsüklimuutujat,
+            // selle peab sätestama programmeerija
+            string tsükliMuutuja2 = "10";                // Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikk väärtust ehk tsüklimuutuja
+            while (tsükliMuutuja2 != "0");               // "While" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
+                                                         // tingimusekontroll, kus kontrollitakse tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true"
+                                                         // tsükkel töötab veel ühe ringi, kui tingiumus ei täitu, siis ei täideta ka järgnevat ringi, ning
+                                                         // tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega, kus on tähemärk arvu 0 jaoks
+            {
+                Console.WriteLine("Esita tekst: ");      //koodiploki "()" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
+                tsükliMuutuja2 = Console.ReadLine();     //mis seejärel omistatakse tsüklimuutuja enda sisse. 
+            }
+
+            /* -= T S Ü K L I D   FOR =-   */
+
+            //for tsükkel, võrreldes dowhile või while tsükliga omab endas tsükli töö edasiviimiseks tsükli enda sätetuse sees, peale tingimusekontrolli
+            //ka iseenda tsüklimuutujat, ning selle iseenda tsüklimuutuja muutmist. Tal on olemas kõik vajal, et teha oma tööd automaatsemalt kui while
+            //võo dowhile tsüklit.
+
+            int[] arvumassiiv = new int[5];              // muutuja, kus on andmed, mida tsükkel läbi töötleb.
+            for (int k = 0; k < arvumassiiv.Length; k++) //kaitstud sõna "for" alustab for tsüklit, pärast mida on sulud, mille vahel on kõik tsükli töö
+                                                         //jaoks vajalik. Esimene parameeter tekitab tsükli töö jaoks kohaliku muutuja - tsüklimuutuja
+                                                         //ei eksisteeri väljaspool tsükli enda konteksti. selles eätestuses on kohaliku muutuja "int k = 0;"
+                                                         //Teine parameeter on tsükli töö kontrollimiseks vajalik tingimusekontroll. samamoodi nagu while või
+                                                         //dowhile juures, tingimuses täitumisel ("true") tsükkel teeb ühe ringi, mittetäitumisel tsükli töö
+                                                         //katkeb. kolmas parameeter on tsüklimuutuja muutmine, selles näites seda kiirtehtega ++ seda
+                                                         //inkrementeeritakse. on võimalik ka muud for sulgude vahelise operatsiooni konfiguratsioonid.
+                                                         //iga for tsükli parameeter on tegelikult ka oma täielik koodilause. seega, eraldatakse sulgude vahel
+                                                         //lauselõpumärgiga, välja arvatud viimane. viimase lõpetab sulg.
+                                                         //sulgudele järgneb koodiplokk {}
+            {
+                Console.WriteLine("sisesta "+k+". arv"); //Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt mingindat arvu.
+                arvumassiiv[k] = int.Parse(Console.ReadLine());//kasutades tsüklimuutujat, täidetakse massiiv.
+            }
 
         }
     }
