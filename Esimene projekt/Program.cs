@@ -177,32 +177,32 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //int vennapikkus = 0;
             //int emapikkus = 0;
             //int isapikkus = 0;
-            List<int> vanused = new List<int>();
-            List<string> isikud = new List<string>() {"sinu",  "oma venna", "oma isa", "oma ema" };
-            int i = 0;
-            do
-            {
-                Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
-                //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
-                vanused.Add(int.Parse(Console.ReadLine()));
-                //Add on listi meetod elemendi listamiseks, lisatakse otse parsitud täisarv käsurea pealt
-                i++;
-                // suurendame i-d ühe võrra
-            } while (i < isikud.Count);
+            //List<int> vanused = new List<int>();
+            //List<string> isikud = new List<string>() {"sinu",  "oma venna", "oma isa", "oma ema" };
+            //int i = 0;
+            //do
+            //{
+            //    Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
+            //    //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
+            //    vanused.Add(int.Parse(Console.ReadLine()));
+            //    //Add on listi meetod elemendi listamiseks, lisatakse otse parsitud täisarv käsurea pealt
+            //    i++;
+            //    // suurendame i-d ühe võrra
+            //} while (i < isikud.Count);
             
-            float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1) + vanused.ElementAt(2) + vanused.ElementAt(3)) / 4) / 100;
-            float vanematekeskmine = ((float)(vanused.ElementAt(2) + vanused.ElementAt(3)) / 2) / 100;
-            float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
-            float vahe = 0;
-            if (vanematekeskmine > lastekeskmine)
-            {
-                vahe = vanematekeskmine - lastekeskmine;
-            }
-            else
-            {
-                vahe = lastekeskmine - vanematekeskmine;
-            }
-            Console.WriteLine($"Perekeskmine on {Math.Round(perekeskmine)} m, vanemate keskmine on {Math.Round(vanematekeskmine)} m ja laste keskmine on {Math.Round(lastekeskmine)} m, ning kahe keskmine vahe on {Math.Round(vahe)} m.");
+            //float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1) + vanused.ElementAt(2) + vanused.ElementAt(3)) / 4) / 100;
+            //float vanematekeskmine = ((float)(vanused.ElementAt(2) + vanused.ElementAt(3)) / 2) / 100;
+            //float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
+            //float vahe = 0;
+            //if (vanematekeskmine > lastekeskmine)
+            //{
+            //    vahe = vanematekeskmine - lastekeskmine;
+            //}
+            //else
+            //{
+            //    vahe = lastekeskmine - vanematekeskmine;
+            //}
+            //Console.WriteLine($"Perekeskmine on {Math.Round(perekeskmine)} m, vanemate keskmine on {Math.Round(vanematekeskmine)} m ja laste keskmine on {Math.Round(lastekeskmine)} m, ning kahe keskmine vahe on {Math.Round(vahe)} m.");
 
             //* Näiteülesanne 7 *//
             //int minuarv = 9001;
@@ -226,122 +226,147 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             float backToFloat = backToLong;
             double backToDouble = backToFloat;
 
-        //* Näiteülesanne 4 *//
-        //Console.WriteLine("Palun sisesta oma vanus");
-        //int kasutajavanus = int.Parse(Console.ReadLine());
-        //Console.WriteLine("Palun sisesta om vanavanema vanus");
-        //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
-        //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
-        //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
-        //Console.WriteLine("Kui palju vanem sa nüüd oled?");
-        //kasutajavanus += int.Parse(Console.ReadLine());
-        //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
+            //* Näiteülesanne 4 *//
+            //Console.WriteLine("Palun sisesta oma vanus");
+            //int kasutajavanus = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisesta om vanavanema vanus");
+            //int kasutajavanavanemavanus = int.Parse(Console.ReadLine());
+            //int vanustevahe = kasutajavanavanemavanus - kasutajavanus;
+            //Console.WriteLine("Ma ei tea mis see olema peaks, aga " + (kasutajavanavanemavanus - kasutajavanus));
+            //Console.WriteLine("Kui palju vanem sa nüüd oled?");
+            //kasutajavanus += int.Parse(Console.ReadLine());
+            //Console.WriteLine("Vanuste vahe on nüüd: " + (kasutajavanavanemavanus - kasutajavanus));
 
-        //Console.WriteLine("Palun sisesta esimene arv.");
-        //float arv1 = 0;
-        //arv1 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisesta esimene arv.");
+            //float arv1 = 0;
+            //arv1 = float.Parse(Console.ReadLine());
 
-        //Console.WriteLine("Palun sisestada teine arv.");
-        //float arv2 = 0;
-        //arv2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisestada teine arv.");
+            //float arv2 = 0;
+            //arv2 = float.Parse(Console.ReadLine());
 
-        //string tehteTüüp = "";
-        //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
-        //tehteTüüp = Console.ReadLine();
+            //string tehteTüüp = "";
+            //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
+            //tehteTüüp = Console.ReadLine();
 
-        //double tulemus = 0.0d;
+            //double tulemus = 0.0d;
 
-        //Kalkulaator programm
-        //if (tehteTüüp != "")
-        //{
-        //    switch (tehteTüüp)
-        //    {
-        //        default:
-        //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
-        //            break;
-        //        case "+":
-        //            tulemus = arv1 + arv2;
-        //            break;
-        //        case "*":
-        //            tulemus = arv1 * arv2;
-        //            break;
-        //        case "-":
-        //            tulemus = arv1 - arv2;
-        //            break;
-        //        case "/":
-        //            tulemus = arv1 / arv2;
-        //            break;
-        //        case "^":
-        //            tulemus = Math.Pow(arv1, arv2);
-        //            break;
-        //        case "v":
-        //            tulemus = Math.Pow(arv1, 1 / arv2);
-        //            break;
-        //    }
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} =  {tulemus}");
-        //}
-        //else
-        //{
-        //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
-        //}
+            //Kalkulaator programm
+            //if (tehteTüüp != "")
+            //{
+            //    switch (tehteTüüp)
+            //    {
+            //        default:
+            //            Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
+            //            break;
+            //        case "+":
+            //            tulemus = arv1 + arv2;
+            //            break;
+            //        case "*":
+            //            tulemus = arv1 * arv2;
+            //            break;
+            //        case "-":
+            //            tulemus = arv1 - arv2;
+            //            break;
+            //        case "/":
+            //            tulemus = arv1 / arv2;
+            //            break;
+            //        case "^":
+            //            tulemus = Math.Pow(arv1, arv2);
+            //            break;
+            //        case "v":
+            //            tulemus = Math.Pow(arv1, 1 / arv2);
+            //            break;
+            //    }
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} =  {tulemus}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
+            //}
 
-        //Kalkulaator programm if ja else ifiga
-        //Console.WriteLine("Palun sisesta esimene arv.");
-        //float arv1 = 0;
-        //arv1 = float.Parse(Console.ReadLine());
+            //Kalkulaator programm if ja else ifiga
+            //Console.WriteLine("Palun sisesta esimene arv.");
+            //float arv1 = 0;
+            //arv1 = float.Parse(Console.ReadLine());
 
-        //Console.WriteLine("Palun sisestada teine arv.");
-        //float arv2 = 0;
-        //arv2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Palun sisestada teine arv.");
+            //float arv2 = 0;
+            //arv2 = float.Parse(Console.ReadLine());
 
-        //string tehteTüüp = "";
-        //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
-        //tehteTüüp = Console.ReadLine();
+            //string tehteTüüp = "";
+            //Console.WriteLine("Palun sisestada tehte tüüp (+, -, *, /, ^, v)");
+            //tehteTüüp = Console.ReadLine();
 
-        //double tulemus = 0.0d;
-
-
-        //if (tehteTüüp == "+")
-        //{
-        //    tulemus = arv1 + arv2;
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else if (tehteTüüp == "-")
-        //{
-        //    tulemus = arv1 - arv2;
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else if (tehteTüüp == "*")
-        //{
-        //    tulemus = arv1 * arv2;
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else if (tehteTüüp == "/")
-        //{
-        //    tulemus = arv1 / arv2;
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else if (tehteTüüp == "^")
-        //{
-        //    tulemus = Math.Pow(arv1, arv2);
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else if (tehteTüüp == "v")
-        //{
-        //    tulemus = Math.Pow(arv1, 1 / arv2);
-        //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
-        //}
-        //else
-        //{
-        //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
-        //}
+            //double tulemus = 0.0d;
 
 
+            //if (tehteTüüp == "+")
+            //{
+            //    tulemus = arv1 + arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "-")
+            //{
+            //    tulemus = arv1 - arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "*")
+            //{
+            //    tulemus = arv1 * arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "/")
+            //{
+            //    tulemus = arv1 / arv2;
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "^")
+            //{
+            //    tulemus = Math.Pow(arv1, arv2);
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else if (tehteTüüp == "v")
+            //{
+            //    tulemus = Math.Pow(arv1, 1 / arv2);
+            //    Console.WriteLine($"Teie tehte tulemus on {arv1} {tehteTüüp} {arv2} = {tulemus}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tehet ei saa sooritada, tehte tüüp puudub");
+            //}
 
-        //*
-        //Teooria
+            /* Näiteülesanne 9 -sünoptiku sõnum */
 
-        https://meet.google.com/qjt-wofj-gdb
+            //Kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
+            //kui sünoptik on sisestuse lõpetanud, kuvab viis rida, mis kirjeldab viis päeva mõlema omadusega
+
+            Console.WriteLine("Tere sünoptik, ");
+            float[] temps = new float[5]; //temperatuuride massiiv
+            string[] kirjeldus = new string[5]; //kirjelduse massiiv
+            for (int i = 0; i < temps.Length; i++)
+            {
+                Console.WriteLine("Esita palun järgmine temperatuur: ");
+                temps[i] = float.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Ole hea ja kirjelda ka eesolev nädal,");
+            for (int i = 0; i < kirjeldus.Length; i++)
+            {
+                Console.WriteLine("kirjelda "+(i+1)+". päeva:");
+                kirjeldus[i] = Console.ReadLine();
+            }
+            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            for (int i = 0; i < temps.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". päeval on temperatuur " + temps[i] + " kraadi ja ilm on " + kirjeldus[i] + ".");
+                ;
+            }
+
+
+            //*
+            //Teooria
+
+            https://meet.google.com/qjt-wofj-gdb
 
             ///* -= S Ü N T A K S =-   */
             //Console.WriteLine("Ommik"); // <-- "1"
