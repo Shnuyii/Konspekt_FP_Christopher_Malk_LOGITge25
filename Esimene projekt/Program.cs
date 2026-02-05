@@ -507,7 +507,8 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             {
 
             }
-            /* -= T I N G I M U S L A U S E - SWITCHCASE =-   */
+
+            /*      -= T I N G I M U S L A U S E - SWITCHCASE =-       */
             int option = 3; // --------
             switch (option) // "Switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saad if-elseif-else asemel kasutada. sulgude vahel käib muutuja nimi, mille põhjal tingimuslik 
                             // ümberlülitus toimub. Siin sulgude vahel ei ole tingimus ise, vaid kõige kontrollitav muutuja, või omakorda sulgude vahel muu tingimuse avaldis. Pärast lülitusvalikut tuleb koodiplokk
