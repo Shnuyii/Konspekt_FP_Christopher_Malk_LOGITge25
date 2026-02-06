@@ -401,6 +401,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
 
             //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
             //1. Massiiv
+            //2. Loend
 
             /* 1 - MASSIIV */
             // [] - > Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. massiivi tähistatakse kantsulgudega.
@@ -423,6 +424,34 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                     //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
                                                     //väärtus muutujasse "kuiPaljuOn". väärtus saab olla ainult täisarv, sest poolikuid või osalisi
                                                     //elemente ei ole olemas
+
+            /* 1 - LOEND */
+            //List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga. saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
+            //             kus sulgude vahel on loendis olevate individuaalsete elementide andmetüüp. Samamoodi nagu massiive, saab loendeid olla ükskõik
+            //             millist lihtandmetüüpi ja komposiitandmetüüpi (isegi kui see on teine list). Erinevalt massiivist aga ei pea ütlema kui pikk loend
+            //             ise on, massiivis tuleb see ette öelda. Loendi eripära on see, et teda saab dünaamiliselt oma pikkusel muuta, see tähendab et
+            //             elemente saab eemaldada koos selle elemendi asukohaga. Massiivi puhul nii teha ei saa sest massiiv on konstantne ehk
+            //             muutumatu pikkusega. Listi üksikelemendi andmetüüp asub noolsulgude vahel "<>" kaitstud sõna "List" järel.
+            // Esimene tekitusviis:
+            List<int> arvuLoend = new List<int>();  //Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi noolsulgude vahel on loendis olevate
+                                                    //andmete andmetüüp, antud juhul on siin täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid
+                                                    //hoitakse, on "arvuloend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
+                                                    //loend täisarvudega.
+            // Teine tekitusviis
+            List<int> arvuLoend2 = new List<int>() {1,2,3};     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga.
+                                                                //Listi noolsulgude vahel on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse, on "arvuloend2". Sellesse
+                                                                //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid pärast
+                                                                //andmetüübi gaga oleaid sulge, anname loogiliste sulgude vahel talle kaasa kohe ka elemendid.
+                                                                //Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegua PIKKUSETA EGA TÜHJA loendiga,
+                                                                //vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes selle mitu elementi on kaasa antud.
+            // Kolmas tekitusviis:
+            List<int> arvuLoend3 = new List<int>(3);       //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga.
+                                                           //Listi noolsulgude vahel on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                           //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse, on "arvuloend2". Sellesse
+                                                           //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid loend omab kolme
+                                                           //tühja elementi. Elementide arv sätestatakse peale noolsulge olevate tavaliste sulgude vahele.
+                                                           //Arve, ega väärtusi, nende elementide sees veel ei ole.
 
             ///* -= M U U T U J A D =-   */
             ////string string = "abc"; //bad
