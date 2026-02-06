@@ -341,32 +341,88 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //Kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
             //kui sünoptik on sisestuse lõpetanud, kuvab viis rida, mis kirjeldab viis päeva mõlema omadusega
 
-            Console.WriteLine("Tere sünoptik, ");
-            float[] temps = new float[5]; //temperatuuride massiiv
-            string[] kirjeldus = new string[5]; //kirjelduse massiiv
-            for (int i = 0; i < temps.Length; i++)
+            //Console.WriteLine("Tere sünoptik, ");
+            //float[] temps = new float[5]; //temperatuuride massiiv
+            //string[] kirjeldus = new string[5]; //kirjelduse massiiv
+            //for (int i = 0; i < temps.Length; i++)
+            //{
+            //    Console.WriteLine("Esita palun järgmine temperatuur: ");
+            //    temps[i] = float.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine("Ole hea ja kirjelda ka eesolev nädal,");
+            //for (int i = 0; i < kirjeldus.Length; i++)
+            //{
+            //    Console.WriteLine("kirjelda " + (i + 1) + ". päeva:");
+            //    kirjeldus[i] = Console.ReadLine();
+            //}
+            //Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            //for (int i = 0; i < temps.Length; i++)
+            //{
+            //    Console.WriteLine((i + 1) + ". päeval on temperatuur " + temps[i] + " kraadi ja ilm on " + kirjeldus[i] + ".");
+            //    ;
+            //}
+
+            List<float> graphData = new List<float>()
             {
-                Console.WriteLine("Esita palun järgmine temperatuur: ");
-                temps[i] = float.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("Ole hea ja kirjelda ka eesolev nädal,");
-            for (int i = 0; i < kirjeldus.Length; i++)
+                3.6f,   //positiivne
+                0,      //0
+                0,
+                4.5f,
+                23.8f,
+                106f,   //maksimaalne väärtus
+                42.2f,
+                -5.2f,  //negatiivne
+                0,
+                0,
+                7f,
+                6f,
+            };
+            int keskPunkt = 45;
+            foreach (var unitOfData in graphData)
             {
-                Console.WriteLine("kirjelda " + (i + 1) + ". päeva:");
-                kirjeldus[i] = Console.ReadLine();
-            }
-            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
-            for (int i = 0; i < temps.Length; i++)
-            {
-                Console.WriteLine((i + 1) + ". päeval on temperatuur " + temps[i] + " kraadi ja ilm on " + kirjeldus[i] + ".");
-                ;
+                string displayableData = "";    //Kuvatav rida
+
+                float calculatedData = keskPunkt + unitOfData;  //normaliseeritud andmed keskpunkti suhtes
+
+                int i = 0;  //while-tsükli muutuja
+                while (i<90)    //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
+                {
+                    int sm0 = (int)(45 + unitOfData);   //sm0 rea alguspunkt nähtavale pulgale, mitte tühjale alale
+                    if (0>i && i<sm0)   //kui i on vahemikus 0 ja sm0
+                    {
+                        displayableData += "▓";
+                    }
+                    else if (sm0 >= i && i < 45)    //kui i on vahemikus sm0 ja 45
+                    {
+                        displayableData += "█";
+                    }
+                    else if (sm0 >= i && i < 90)    //kui i on vahemikus sm0 ja 90
+                    {
+                        displayableData += "░";
+                    }
+                    else if (i >= sm0 && i <45)     //kui i on vahemikus sm0 ja 45
+                    {
+                        displayableData += "▓";
+                    }
+                    else
+                    {
+                        displayableData += "X";
+                    }
+                    i++;
+                }
+                Console.WriteLine(displayableData);
             }
 
+            /*
+            Harjutused
 
-        //*
-        //Teooria
+            https://meet.google.com/qjt-wofj-gdb
+            
+            Teooria
+            */
+            
 
-        https://meet.google.com/qjt-wofj-gdb
+        
 
             ///* -= S Ü N T A K S =-   */
             //Console.WriteLine("Ommik"); // <-- "1"
