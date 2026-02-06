@@ -482,6 +482,11 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                    // 3 - omistusoperaator mis annab muutujale andmed sisse
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
+            //                    6
+            List<bool> näidis2 = new List<bool>();  // 6 - kaitstud sõna "new" kasutatakse siis kui tahetakse instantseerida uude muutujasse
+                                                    //     väärtust mille andmetüüp on kompleksne, ja vajab konstruktori väljakutset
+                                                    //     komplekssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
+                                                    //     teiste andmetüüpide põhjal
 
 
 
