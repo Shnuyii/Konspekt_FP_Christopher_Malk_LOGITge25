@@ -189,7 +189,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //    i++;
             //    // suurendame i-d ühe võrra
             //} while (i < isikud.Count);
-            
+
             //float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1) + vanused.ElementAt(2) + vanused.ElementAt(3)) / 4) / 100;
             //float vanematekeskmine = ((float)(vanused.ElementAt(2) + vanused.ElementAt(3)) / 2) / 100;
             //float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
@@ -352,7 +352,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             Console.WriteLine("Ole hea ja kirjelda ka eesolev nädal,");
             for (int i = 0; i < kirjeldus.Length; i++)
             {
-                Console.WriteLine("kirjelda "+(i+1)+". päeva:");
+                Console.WriteLine("kirjelda " + (i + 1) + ". päeva:");
                 kirjeldus[i] = Console.ReadLine();
             }
             Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
@@ -363,10 +363,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             }
 
 
-            //*
-            //Teooria
+        //*
+        //Teooria
 
-            https://meet.google.com/qjt-wofj-gdb
+        https://meet.google.com/qjt-wofj-gdb
 
             ///* -= S Ü N T A K S =-   */
             //Console.WriteLine("Ommik"); // <-- "1"
@@ -413,7 +413,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                             //muutuja nimi on "uusMassiiv" ning võrdusmärgi taga omistatakse sinna massiiv kolme elemendiga,
                                             //kus mitte ükski element hetkel veel väärtust ei oma. kui mitu elementi väljendatakse kantsulgude vahel,
                                             //peale andmetüüpi ja peale kaitstud sõna "new". New ütleb, et tegu on uue väärtusega selle muutuja sees.
-            // Teine tekitusviis
+                                            // Teine tekitusviis
             int[] uusMassiiv2 = [1, 2, 3];  //Teine masiivi tekitusviis, kus massiivi pikkuse sätestamise asemel antakse muutujasse kohe kindlate
                                             //väärtusega elemedid kaasa. Massiivi pikkus sätestama ei pea, kuna see tuletatakse sisestatud
                                             //elementide arvust.
@@ -454,7 +454,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
 
-            
+
 
             /* -= O M I S T U S O P E R A A T O R I D =-   */
             // =    -> üksik võrdusmärk omistab muutuja sisse väärtuse, mida adresseritakse muutuja enda nimega
@@ -521,7 +521,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                     break;
                 case 3:
                     Console.WriteLine(option);  // Antud juhul kuvatakse juhumi 3 puhul kasutajale muutujas "option" asuv väärtus välja.
-                    break;    
+                    break;
                 default:    //default juhtum täitub siis, kui ülejäänud kirjeldatud juhtumid ei kata switchi lülitusvalikus olevas muutujas asuval väärtust. Toimib nagu else, kui erinevalt if-elseif-else struktuurist võib default olla ka alguses
                     break;  // kui antud juhtumi tegevus on tehtud, väljutakse mitte ainult juhtumist, vaid ka kogu käesolevat switch-case tingimustikust. Peale breaki on lauselõpumärk.
             }
@@ -604,10 +604,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // While tsükkel on kõige tüüpilisem laadi tsükkel, tal on tingimusekontroll esimese ringi alguses, kuid tsükkel ei oma sisseehitatud tsüklimuutujat,
             // selle peab sätestama programmeerija
             string tsükliMuutuja2 = "10";                // Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikk väärtust ehk tsüklimuutuja
-            while (tsükliMuutuja2 != "0");               // "While" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
-                                                         // tingimusekontroll, kus kontrollitakse tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true"
-                                                         // tsükkel töötab veel ühe ringi, kui tingiumus ei täitu, siis ei täideta ka järgnevat ringi, ning
-                                                         // tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega, kus on tähemärk arvu 0 jaoks
+            while (tsükliMuutuja2 != "0") ;               // "While" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
+                                                          // tingimusekontroll, kus kontrollitakse tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true"
+                                                          // tsükkel töötab veel ühe ringi, kui tingiumus ei täitu, siis ei täideta ka järgnevat ringi, ning
+                                                          // tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega, kus on tähemärk arvu 0 jaoks
             {
                 Console.WriteLine("Esita tekst: ");      //koodiploki "()" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
                 tsükliMuutuja2 = Console.ReadLine();     //mis seejärel omistatakse tsüklimuutuja enda sisse. 
@@ -631,10 +631,29 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                          //lauselõpumärgiga, välja arvatud viimane. viimase lõpetab sulg.
                                                          //sulgudele järgneb koodiplokk {}
             {
-                Console.WriteLine("sisesta "+k+". arv"); //Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt mingindat arvu.
+                Console.WriteLine("sisesta " + k + ". arv"); //Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt mingindat arvu.
                 arvumassiiv[k] = int.Parse(Console.ReadLine());//kasutades tsüklimuutujat, täidetakse massiiv.
             }
 
+            /* -= T S Ü K L I D   FOREACH =-   */
+
+            //Foreach tsükkel, võrreldes for-tsükliga, ei oma mitut parameetrit, vaid kindlat kollektsiooni kontrollivat tingimust, koos
+            //iga elemendi jaoks tekitatava ajutise muutujaga. Foreach tsükkel käib ainult senikaua kuni elemendid pole otsa saanud. Foreach tsükkel tööd saab kontrollida
+            //ainult läbi selle töödeldava kollektsiooni enda, et seda et tsüklimuutuja on kollektsiooni elementide arv, selle tsükli jaoks EI TEKITATA eraldi muutujat.
+
+            List<string> sõnad = new List<string>() { "maasikas", "muulikas", "mustikas" }; //Muutujas, kus on andmed, mida tsükkel läbi töötleb
+            foreach (var üksSõna in sõnad)      //Kaitstud sõna "foreach" alustab foreach tsükli, pärast mida on sulud mille vahel on tsükli töö
+                                                //kontrolliv tingimus. selle tingimuse sees tekitatakse ajutine muutuja andmetüübiga "var"
+                                                //töödeldava andmekogumi üksikelemendi jaoks. Tingimuse keskel on teine kaitstud sõna "in" mis
+                                                //kontrollib, et tsükkel töötaks selle elemendi jaoks. Peale ühte ringi, vaadatakse kas elemente on järgi
+                                                //kui on, omistatakse muutujasse "üksSõna" järgmine element, ning tsükkel käib veel ühe ringi. kui aga
+                                                //elemente rohkem ei ole, tsükkel lõppeb. Tsükli tööd saab kontrollida näiteks kontrollitava kollektsiooni
+                                                //suurendamisega. tsüklil ei ole tsüklimuutujat, kuna kollektsiooni järgi tsükkel töötab.
+                                                //peale sulge on koodiplokk "{}" mille seees mingi tegevus tehakse.
+            {
+                Console.WriteLine(üksSõna);     //antud juhul, kuvatakse element välja
+            }
+            //NB - tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud
         }
     }
 }
