@@ -362,56 +362,56 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //    ;
             //}
 
-            List<float> graphData = new List<float>()
-            {
-                3.6f,   //positiivne
-                0,      //0
-                0,
-                4.5f,
-                23.8f,
-                106f,   //maksimaalne väärtus
-                42.2f,
-                -5.2f,  //negatiivne
-                0,
-                0,
-                7f,
-                6f,
-            };
-            int keskPunkt = 45;
-            foreach (var unitOfData in graphData)
-            {
-                string displayableData = "";    //Kuvatav rida
+            //List<float> graphData = new List<float>()
+            //{
+            //    3.6f,   //positiivne
+            //    0,      //0
+            //    0,
+            //    4.5f,
+            //    23.8f,
+            //    106f,   //maksimaalne väärtus
+            //    42.2f,
+            //    -5.2f,  //negatiivne
+            //    0,
+            //    0,
+            //    7f,
+            //    6f,
+            //};
+            //int keskPunkt = 45;
+            //foreach (var unitOfData in graphData)
+            //{
+            //    string displayableData = "";    //Kuvatav rida
 
-                float calculatedData = keskPunkt + unitOfData;  //normaliseeritud andmed keskpunkti suhtes
+            //    float calculatedData = keskPunkt + unitOfData;  //normaliseeritud andmed keskpunkti suhtes
 
-                int i = 0;  //while-tsükli muutuja
-                while (i<90)    //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
-                {
-                    int sm0 = (int)(45 + unitOfData);   //sm0 rea alguspunkt nähtavale pulgale, mitte tühjale alale
-                    if (0>i && i<sm0)   //kui i on vahemikus 0 ja sm0
-                    {
-                        displayableData += "▓";
-                    }
-                    else if (sm0 >= i && i < 45)    //kui i on vahemikus sm0 ja 45
-                    {
-                        displayableData += "█";
-                    }
-                    else if (sm0 >= i && i < 90)    //kui i on vahemikus sm0 ja 90
-                    {
-                        displayableData += "░";
-                    }
-                    else if (i >= sm0 && i <45)     //kui i on vahemikus sm0 ja 45
-                    {
-                        displayableData += "▓";
-                    }
-                    else
-                    {
-                        displayableData += "X";
-                    }
-                    i++;
-                }
-                Console.WriteLine(displayableData);
-            }
+            //    int i = 0;  //while-tsükli muutuja
+            //    while (i<90)    //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
+            //    {
+            //        int sm0 = (int)(45 + unitOfData);   //sm0 rea alguspunkt nähtavale pulgale, mitte tühjale alale
+            //        if (0>i && i<sm0)   //kui i on vahemikus 0 ja sm0
+            //        {
+            //            displayableData += "▓";
+            //        }
+            //        else if (sm0 >= i && i < 45)    //kui i on vahemikus sm0 ja 45
+            //        {
+            //            displayableData += "█";
+            //        }
+            //        else if (sm0 >= i && i < 90)    //kui i on vahemikus sm0 ja 90
+            //        {
+            //            displayableData += "░";
+            //        }
+            //        else if (i >= sm0 && i <45)     //kui i on vahemikus sm0 ja 45
+            //        {
+            //            displayableData += "▓";
+            //        }
+            //        else
+            //        {
+            //            displayableData += "X";
+            //        }
+            //        i++;
+            //    }
+            //    Console.WriteLine(displayableData);
+            //}
 
             /*
             Harjutused
@@ -454,6 +454,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
             //var y = "tekst";
             //bool yesorno = false; //true or false
+
+            ///* -= M U U T U J A D =-   */
+            ////string string = "abc"; //bad
+            //string sõna = "abc"; //very gud
 
             //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
             //1. Massiiv
@@ -509,9 +513,20 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                            //tühja elementi. Elementide arv sätestatakse peale noolsulge olevate tavaliste sulgude vahele.
                                                            //Arve, ega väärtusi, nende elementide sees veel ei ole.
 
-            ///* -= M U U T U J A D =-   */
-            ////string string = "abc"; //bad
-            //string sõna = "abc"; //very gud
+            //*  -= J U H U A R V =-    *//
+            //
+            // Random klass annab võimaluse programmeerijale genereerida pseudo-random väärtusi
+            Random juhuArv = new Random();      //klassinimi "Random" on kasutatav kui andmetüüpi, mis ütleb et järgnevas muutujas nimega "juhuArv" on
+                                                //uus random tüüpi objekt, mis omistatakse sinna "new Random()" käsuga. Konstruktor ulatab muutuja sisse
+                                                //Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude generaatorina
+                                                //millest punkti abil saab adresseerida Random genereerimise tööriistu.
+            int a = juhuArv.Next();             //.Next() on meetod Random klassis mis on genereeriv meetod juhuarvu genereerimiseks. Seda saab kasutada
+                                                //kui väärtusena, ning ta tagastab suvalise arvu. Ilma parameetrita tagastab andmetüübi maksimaalpiirides
+                                                //mingisuguse juhuarvu
+            int miski = juhuArv.Next(5);        //.Next() ühe parameetriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
+            int miski2 = juhuArv.Next(-5, 5);   //.Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
+            double aDbl = juhuArv.NextDouble(); //.NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne.
+            float aLng = juhuArv.NextSingle();  //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0.
 
             // -------------------------------------------------------
 
