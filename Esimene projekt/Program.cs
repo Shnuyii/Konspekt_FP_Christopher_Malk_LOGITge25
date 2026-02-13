@@ -455,13 +455,11 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //var y = "tekst";
             //bool yesorno = false; //true or false
 
-            ///* -= M U U T U J A D =-   */
-            ////string string = "abc"; //bad
-            //string sõna = "abc"; //very gud
-
             //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
             //1. Massiiv
             //2. Loend
+            //3. Sõnastik
+            //4. Tuple
 
             /* 1 - MASSIIV */
             // [] - > Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. massiivi tähistatakse kantsulgudega.
@@ -485,7 +483,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                     //väärtus muutujasse "kuiPaljuOn". väärtus saab olla ainult täisarv, sest poolikuid või osalisi
                                                     //elemente ei ole olemas
 
-            /* 1 - LOEND */
+            /* 2 - LOEND */
             //List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga. saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
             //             kus sulgude vahel on loendis olevate individuaalsete elementide andmetüüp. Samamoodi nagu massiive, saab loendeid olla ükskõik
             //             millist lihtandmetüüpi ja komposiitandmetüüpi (isegi kui see on teine list). Erinevalt massiivist aga ei pea ütlema kui pikk loend
@@ -512,6 +510,35 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                            //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid loend omab kolme
                                                            //tühja elementi. Elementide arv sätestatakse peale noolsulge olevate tavaliste sulgude vahele.
                                                            //Arve, ega väärtusi, nende elementide sees veel ei ole.
+
+            /* 3 - SÕNASTIK */
+            //Dictionary<T, T>      -> Dictionary on komposiitandmetüüp, mis omab võtiväärtuspaare. Erinevalt eelnevatest komposiitandmetüüpidest, saab Dictionary omada
+            //                         kahte erinevat andmetüüpi, millest esimene väljendab võtme andmetüüpi ning teine võtme taga olevat väärtuse andmetüüpi. Need
+            //                         andmetüübid saavad üksteisest erineda või isegi omada klasse andmetüüpidena. 
+            // Esimene tekitusviis:
+            Dictionary<int, string> sõnastik = new Dictionary<int, string>();
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string")
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus tühi sõnastik vastavate andmetüüpidega.
+            Dictionary<int, string> sõnastik2 = new Dictionary<int, string>() { { 1, "astelpaju" }, { 2, "muulukas" }, { 3, "maasikas" } };
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string")
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus sõnastik koos elementidega, mis asuvad sulgude taga olevatest loogilises
+            //sulgudes ja iga element ise on veel omakorda loogilistes sulgudes infoga, mis vastab dictionary andmetüüpide sätestustele.
+
+            //Sõnastiku tööriistad:
+            sõnastik.Add(4, "tikker");          //.Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid
+                                                //vastavad täiendatava sõnastiku andmetüüpide sätestusega.
+            sõnastik.Remove(2);                 //.Remove() eemaldab kindla võtme järgi sõnastikus oleva elemendi. Sulgude vahel on selle võtme andmetüübile vastav
+                                                //väärtus, mitte võtme taga oleva väärtuse väärtus.
+            sõnastik.Clear();                   //.Clear() teeb sõnastikku täielikult tühjaks.
+
+            sõnastik.ContainsKey(4);            //.ContainsKey() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud võtme.
+            sõnastik.ContainsValue("tikker");   //.ContainsValue() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud väärtuse.
+
+            //Dictionary<List<int>, string> sõnastikkast = new Dictionary<List<int>, string>();
 
             //*  -= J U H U A R V =-    *//
             //
@@ -541,7 +568,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // true         typeof      uint        ulong       unchecked   unsafe      ushort      using       virtual         void            volatile    while
 
             // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+            
+            ///* -= M U U T U J A D =-   */
+            ////string string = "abc"; //bad
+            //string sõna = "abc"; //very gud
 
             //int mingiArv = 4;
             //int mingiArv += 15;
