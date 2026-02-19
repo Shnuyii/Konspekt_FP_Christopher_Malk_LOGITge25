@@ -2,7 +2,8 @@
 using System.Threading.Channels;
 using System;
 using System.Net.Http.Headers;
-using System.ComponentModel.DataAnnotations; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
+using System.ComponentModel.DataAnnotations;
+using System.Globalization; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
 
 namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "Esimene_projekt"
 {
@@ -420,9 +421,9 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             
             Teooria
             */
-            
 
-        
+
+
 
             ///* -= S Ü N T A K S =-   */
             //Console.WriteLine("Ommik"); // <-- "1"
@@ -454,6 +455,80 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
             //var y = "tekst";
             //bool yesorno = false; //true or false
+
+            //*  -= S Õ N E T Ö Ö R I I S T A D =-    *//
+            //
+            string minuLause = "    Täna hommikul jõin ära terve ploki monsterit, aga üles ei ärganud, tahan veel magada   ";
+            Console.WriteLine(minuLause.Length);            //Sõne tööriist .Length tagastab selle sõne pikkuse.
+            Console.WriteLine(minuLause.ToUpper());         //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks.
+            Console.WriteLine(minuLause.ToLower());         //Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks.
+            string tuvastus = "Kas lauses on sõna 'monsterit'?:"+minuLause.ToLower().Contains("monsterit");
+
+            bool tuvastus2 = minuLause.StartsWith("täna");  //StartsWith tagastab true või false, olenevalt sellest kas objekt algab otsitavaga.
+            bool tuvastus3 = minuLause.EndsWith("magada");    //EndsWith tagastab true või false, olenevalt sellest kas objekt lõppeb otsitavaga.
+            Console.WriteLine(tuvastus);                    //Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat.
+            Console.WriteLine(minuLause.Trim());            //Trim eemaldab algusest ja lõpust tühjad tähed nagu space ja reavahetus.
+            string[] lauseOsad = minuLause.Split(',');      //Split() tükeldab sõne osadeks, selle tähemärgi pealt mis parameetriks seatud on.
+            foreach (var osa in lauseOsad)
+            {
+                Console.WriteLine(osa.Trim());
+            }
+            bool isBig = false;
+            for (int i = 0;i < lauseOsad.Length;i++)
+            {
+                if (isBig == true)
+                {
+                    lauseOsad[i] = lauseOsad[i].ToUpper();
+                }
+                else
+                {
+                    lauseOsad[i] = lauseOsad[i].ToLower();
+                }
+                isBig = !isBig;
+            }
+            string töödeldudLause = string.Join(',', lauseOsad);//.Join() liidab stringid kokku üheks lauseks, võttes parameetriks tähe char
+                                                                //ja liidetavad elemendid loendina.
+            Console.WriteLine(töödeldudLause);
+           
+            // + on kahe stringi vahel konkateneerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi lõppu järgmise
+            // stringi tema algusest et neid kahte ühendada
+            List<string> mingiLoend = new List<string>() {"kiluvõileib","vastlakukkel","hernesupp"};
+            string väljundLause = "Need on meie menüüs:";
+            foreach (var söök in mingiLoend)
+            {
+                väljundLause += " " + söök + ",";
+            }
+            Console.WriteLine(väljundLause);
+
+            //Concat() on spetsiifiline meetod, millega saab mitu string-tüüpi parameetrit ühendada üheks stringiks.
+            string eesnimi = "Julius";
+            string perekonnanimi = "Caesar";
+            string amet = "noahoidik";
+            string kuulusKeiser = string.Concat(eesnimi, perekonnanimi, amet);
+            Console.WriteLine(kuulusKeiser);
+
+            // "$" dollarimärk on viis kuidas keset stringi kasutada muutujates olevaid väärtusi, ilma nende tahtliku teisenduseta. Ehk tegu on
+            // formateeritud stringiga
+            string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maailma kuulsaim {amet}";
+            Console.WriteLine(kuulusKeiser2);
+
+            Console.WriteLine("A \n B");                    // \n tekitab sõnes reavahetuse
+            Console.WriteLine(" \\ ");                      // \\ kuvab teksti sisse "\"
+            Console.WriteLine("I\t2");                      // \t tekitab teksti vahele TAB operatsiooni, ehk neli/kaheksa vahet korraga
+            Console.WriteLine("AaF\ba");                    // \b kusutab \ble eelneva tähe kui \b on keset sõne
+            Console.WriteLine(" \" ");                      // \" kuvab teksti sisse '"'
+            Console.WriteLine(" \' ");                      // \' kuvab teksti sisse "'"
+            Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
+            Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. Kui sõne on pikem kui parameeter, ei lisata midagi
+            foreach (var täht in perekonnanimi)
+            {
+                Console.WriteLine(täht);
+            }
+            for (int i = 0; i < perekonnanimi.Length; i++)
+            {
+                Console.WriteLine(perekonnanimi[i]);
+            }
+            Console.ReadLine();
 
             //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
             //1. Massiiv
