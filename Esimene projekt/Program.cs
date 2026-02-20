@@ -457,7 +457,8 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //bool yesorno = false; //true or false
 
             //*  -= S Õ N E T Ö Ö R I I S T A D =-    *//
-            //
+            // Sõne tööriistad on tekstilise andme töötluseks tööriistad mis teevad kasutajale mingi tegevused ära, või tuvastavad midagi.
+            // Neid on vaja tihtipeale programmi sisendi standardiseerimiseks, ning kasutaja sisestusvigadele 
             string minuLause = "    Täna hommikul jõin ära terve ploki monsterit, aga üles ei ärganud, tahan veel magada   ";
             Console.WriteLine(minuLause.Length);            //Sõne tööriist .Length tagastab selle sõne pikkuse.
             Console.WriteLine(minuLause.ToUpper());         //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks.
@@ -512,6 +513,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maailma kuulsaim {amet}";
             Console.WriteLine(kuulusKeiser2);
 
+            /* Escape character teksti vormindamiseks */
             Console.WriteLine("A \n B");                    // \n tekitab sõnes reavahetuse
             Console.WriteLine(" \\ ");                      // \\ kuvab teksti sisse "\"
             Console.WriteLine("I\t2");                      // \t tekitab teksti vahele TAB operatsiooni, ehk neli/kaheksa vahet korraga
@@ -520,6 +522,15 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             Console.WriteLine(" \' ");                      // \' kuvab teksti sisse "'"
             Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
             Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. Kui sõne on pikem kui parameeter, ei lisata midagi
+            Console.WriteLine("""
+                aaaaaaaaaaa
+                aaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                """);                                       // kolm jutumärgipaari on sõne eraldi väljendusviis, mis hoiab siseandmete vorminduse
+                                                            // alles, kõik reavahetused mis on, kõik jutumärgid, jne ilma "\" vajamata
+            /* Stringi elementide adresseerimine */
+
+            //Kuna string on massiiv tähtedest, siis saab stringi elemente/tähti adresseerida nagu tavalist massiivi.
             foreach (var täht in perekonnanimi)
             {
                 Console.WriteLine(täht);
@@ -528,6 +539,9 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             {
                 Console.WriteLine(perekonnanimi[i]);
             }
+
+            //sarnsaselt massiivile saab ka elemendi sisu järgi .IndexOf meetodiga 
+            Console.WriteLine(perekonnanimi.IndexOf("r"));
             Console.ReadLine();
 
             //*  -= K O M P O S I I T A N D M E T Ü Ü B I D =-    *//
@@ -553,10 +567,13 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                             //elementide arvust.
 
             // - - Massiivi sisemised meetodid - -
-            int kuiPaljuOn = uusMassiiv.Length;     //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
-                                                    //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
-                                                    //väärtus muutujasse "kuiPaljuOn". väärtus saab olla ainult täisarv, sest poolikuid või osalisi
-                                                    //elemente ei ole olemas
+            int kuiPaljuOn = uusMassiiv.Length;         //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
+                                                        //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
+                                                        //väärtus muutujasse "kuiPaljuOn". väärtus saab olla ainult täisarv, sest poolikuid või osalisi
+                                                        //elemente ei ole olemas
+            int kasOn = Array.IndexOf(uusMassiiv, 2);   //Massiivi meetod "IndexOf" mille saame kasutusele võtta punkti abil andmetüübist endast võtab
+                                                        //sisse kaks parameetrit, massiivi enda ja otsitava elemendi 
+                                                        //ESIMENE vastav element asub.
 
             /* 2 - LOEND */
             //List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga. saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
