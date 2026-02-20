@@ -445,7 +445,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // ///          - Funktsiooni summary kommentaar, kirjeldab meetodeid, mille tekst kuvatakse välja tooltipina
             //          - taane - aitab arendajal aru saada, kuskohas millise koodiploki sees kood parasjagu asub, ning aitab järge pidada
 
-            //*  -= A N D M E T Ü Ü B I D =-    *//
+            //*  -= L I H T A N D M E T Ü Ü B I D =-    *//
             //string tekst = "mingi loetav tekst";
             //char täht = 'a';
             //int arv = 1;
@@ -455,6 +455,8 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //var x = 123; //umbmäärane andmetüübiga ajutine muutuja
             //var y = "tekst";
             //bool yesorno = false; //true or false
+            //void - on andmetüüp, mida muutuja tekitamisel kasutada ei saa, kasutatakse ainult meetodide signatuurides väljendamiseks et meetod ei
+            //       tagasta midagi.
 
             //*  -= S Õ N E T Ö Ö R I I S T A D =-    *//
             // Sõne tööriistad on tekstilise andme töötluseks tööriistad mis teevad kasutajale mingi tegevused ära, või tuvastavad midagi.
@@ -910,6 +912,132 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                 Console.WriteLine(üksSõna);     //antud juhul, kuvatakse element välja
             }
             //NB - tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud
+        }
+        /* -= M E E T O D I D =-   */
+
+        // Meetodid on väljakutsutavad koodijupid või alamprogrammid. Meetodid teostavad tavaliselt mingeid spetsiifilisi funktsioone või tegevusi.
+        //Meetodid lasevad programmeerijal taaskasutada oma eelnevalet kirjutatud koodi - write once use many.
+        //Meetodeid on kahte liiki - ühed, mis tagastavad mingisuguse töö või tegevuse tagajärjel või muu tulemuse saavutamisel andmeid, ja teised
+        //mis ei tagasta midagi, kuid omavad siiski mingit tegevust.
+
+        // Meetodi anatoomia:
+        // Meetodi olemus sisaldab endas kolme vajalikku komponenti. Meetodi enda omadused ja nimi, parameetrid ning meetodi kood ise.
+        // Meetodi omadused ja nimi ning parameetrid moodustavad meetodi signatuuri, ning sellele järgneb loogilistes sulgudes {}
+        // koodiplokk, mida vastav meetod väljakutsel täidab.
+
+        //Meetodi signatuur on kõige esimene rida, mis meetodi tekitamisel kirjutatakse, ning mis kirjeldab meetodit ennast ja selle omadusi.
+        //Signatuur aga koosneb ise ka mitmest või kõigist järgnevatest. Nenedeks on juurdepääsu modifikaator, tagastustüüp, meetodi enda nimi,
+        //olenevalt liigist ka parameetrid sulgude vahel () ja peale signatuuri koodiplokk.
+
+        // - Juurdepääsu modifikaator ütleb ära kust ja kuidas seda meetodit välja kutsuda või adresseerida saab. Tähtsamaid neist on 4-5 tükki.
+        // o. ----------    -modifikaatori puudumisel kompilaator annab meetodile sobiva variandi automaatselt
+        // 1. "public"      -meetod on avalik ja kättesaadav ka teistes klassides, peale selle klassi/projekti kus meetod ise asub.
+        // 2. "private"     -meetod on kättesaadav ainult selles klassis kus meetod ise asub.
+        // 3. "protected"   -meetod on kättesaadav klassis kus ta asub ning kõikides klassides mis pärituse kaudu omab selle klassi andmeid.
+        // 4. "internal"    -meetod on juurdepääsetav ainult projektis kus ta asub. Samas projektis saavad teised klassid seda kasutada, aga
+        //                   mitte projektist väljas asuvad klassid.
+        // 5. "static"      -meetodit on ainult üks.
+
+        //      - Tagastustüüp on meetodi omadus, mis ütleb ära millise tüübiga andmeid meetodi väljakutsumise asukohta tagastatakse, kui üldse.
+        // Andmetüüp mida tagastatakse võib olla ükskõik milline liht- või kombinatsioonandmetüüp. Aga kui meetod ei tagasta üldse andmeid, on
+        // Selle meetodi enda andmetüüp "void". Kui meetodil on tagastustüüp mis on midagi muud kui void, on meetodi sees iga toimiva koodisuuna
+        // lõpus kaitstud sõna "return", return ütleb et just see asi on vaja tagastada. Peale return on alati tagastatavad andmed või muutuja
+        // mis sisaldab tagastatavaid andmeid. Olenevalt meetodist saab tagastuseks olla ka tegevus. Need andmed antakse tagasi sinna kus meetod
+        // kutsuti, ning peale sõna return muud koodi ei täideta. Return katkestab meetodi töö.
+
+        //          - Meetodi enda nimi on midagi mille järgi arendaja meetodit kasutab. Nimi omab samat funktsiooni nagu näiteks muutuja nimi mille
+        // sees on muutuja andmed. Meetodi nime kirjutamisel või väljamõtlemisel võiks meetodi nime kirjutada tegevuse järgi mida meetod teeb,
+        // mitte kus ta käib ega mõni muu kõrvaline või arusaamatu asi. Näide: kui arendaja kirjutab meetodi nimega "A()", siis see meetodi nimi
+        // ei ütle ta meeskonnakaaslastele/talle endale tulevikus mitte midagi, aga meetodi nimi "ArvutaArvudKokku" ütleb selgelt ära, mille
+        // jaoks meetod on. Ta ei raiska oma aega meetodi sisse vaatamiseks, et lugeda koodi ning ise nuputada mida meetod teeb.
+        
+        //      - Parameetrid on väljad mis ütlevad mida meetodil meetodi tööks vaja on, ning mis on vaja sulgude vahele lisada meetodi
+        // väljakutseasukohas. Parameetri muutuja nimi võib olla väljendatud teistmoodi kui selle meetodiga kasutatavad andmed ise.
+        // Parameetreid on kahte sorti, kohustuslikud ja optional ehk valikuline. Valikulise parameetri väljendusel pannakse andmetüübi taha
+        // küsimärk. On olemas ka vaikeväärtusega parameetrid, kus muutujale, väärtuse puudumisel antakse signatuuris mingisugune väärtus ette ära.
+
+        // 1. tüüpi meetod - ei tagasta andmeid
+
+        //A       A     B       C    D
+        public static void UusMeetod() //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, ning tagastustüüp on void.
+                                       //Pärast omadusi on meetodi nimi "UusMeetod" peale mida on sulud "()" mille vahel parameetreid määratud ei ole.
+        {                              //Peale signatuuri on koodiplokk
+            Console.WriteLine("Tere maailm");//kus kuvatakse kasutajale tekst "Tere maailm"
+        }
+
+        // 2. tüüpi meetod - tagastab mingisuguse väärtuse või mingid andmed.
+        int[] arvutatavadArvud = new int[] {67,69,420,9001};  //Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
+        //A       A     B       C        D
+        public static int ArvutaKokku(int[] arvud)  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, tagastustüüp
+                                                    //"int" ütleb et meetod tagastab andmeid üksiku täisarvuna. Meetodi nimi on "ArvutaKokku" ning
+                                                    //meetodile on antud üks kohustuslik parameeter arvumassiiv mille muutuja nimi meetodi sees on
+                                                    //"arvud"
+        {
+            //Meetodi sisu arvutab järjendis olevad arvud foreachi ja += omistusoperatsiooniga kokku muutujasse "summa"
+            int summa = 0;
+            foreach (var arv in arvud)
+            {
+                summa += arv;
+            }
+            return summa; //ning meetodi lõpus kasutades kaitstud sõna "return" tagastab muutujas "summa" oleva väärtuse.
+        }
+
+        //meetodi väljakutse:
+        //Hetkel käivitatud koodis kutsutakse meetod välja ainult tema nimepidi + vajalikud parameetrid (kui neid on)
+        //
+        //  /.mingi muu kood./
+        //
+        //  ArvutaKokku(arvutatavadArvud)
+        //
+        //  /.mingi muu kood./
+        //
+        // Erinevalt kõigest muust, ei ole meetodi näidis konspektis funktsioneeriv.
+
+        /* Valikuline ja kohustuslik parameeter */
+        public void MillineTekst(int vanus, int? pikkus) //Meetodi signatuuris kus on parameetrid on asetatud üks kohustuslik parameeter "vanus", ja üks
+                                                         //valikuline parameeter "pikkus". Valikulist parameetrit tähistatakse peale andmetüüpi oleva
+                                                         //küsimärgiga. Küsimärk ütleb, et muutujas olev väärtus on nullable, ehk meetod otseselt ei loe seda
+                                                         //ta *võib* olemas olla.
+        {
+            int arv = (int)pikkus;                       //Kui non-nullable muutujasse väärtustada nullable muutujas väärtus, on vajalik ka castimine.
+            if (vanus < 18)
+            {
+                Console.WriteLine("Kõtt, alakaid ei taha");
+            }
+            else if (vanus >= 18)
+            {
+                if (pikkus != null)
+                {
+                    if (pikkus <= 170)
+                    {
+                        Console.WriteLine("Saad juua ainult 2 liitrit monsterit");
+                    }
+                    else if (pikkus <= 200)
+                    {
+                        Console.WriteLine("Saad juua 4 liitrit monsterit");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Saad juua 2 liitrit monsterit");
+                }
+            }
+        }
+
+        /* Parameetrite vaikeväärtus */
+        public string KeskmineTase(float veetase = 1.5f)    //Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk
+                                                            //väärtusega. Meetodi signatuuris ütleb võrdusmärk, et tegu on vaikeväärtusega, ning kui meetodile
+                                                            //ei anta kaasa sissetulevat väärtust, arvestatakse et väärtuseks on sulgude taga olev anne.
+                                                            //Antud juhul 1.5f
+        {
+            if (veetase > 1.5)
+            {
+                return"Liiga kõrge";
+            }
+            else
+            {
+                return "normaalne";
+            }
         }
     }
 }
