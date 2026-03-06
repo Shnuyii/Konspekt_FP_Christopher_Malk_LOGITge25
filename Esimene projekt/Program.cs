@@ -3,7 +3,8 @@ using System.Threading.Channels;
 using System;
 using System.Net.Http.Headers;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
+using System.Globalization;
+using System.Text; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
 
 namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "Esimene_projekt"
 {
@@ -465,7 +466,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             Console.WriteLine(minuLause.Length);            //Sõne tööriist .Length tagastab selle sõne pikkuse.
             Console.WriteLine(minuLause.ToUpper());         //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks.
             Console.WriteLine(minuLause.ToLower());         //Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks.
-            string tuvastus = "Kas lauses on sõna 'monsterit'?:"+minuLause.ToLower().Contains("monsterit");
+            string tuvastus = "Kas lauses on sõna 'monsterit'?:" + minuLause.ToLower().Contains("monsterit");
 
             bool tuvastus2 = minuLause.StartsWith("täna");  //StartsWith tagastab true või false, olenevalt sellest kas objekt algab otsitavaga.
             bool tuvastus3 = minuLause.EndsWith("magada");    //EndsWith tagastab true või false, olenevalt sellest kas objekt lõppeb otsitavaga.
@@ -477,7 +478,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                 Console.WriteLine(osa.Trim());
             }
             bool isBig = false;
-            for (int i = 0;i < lauseOsad.Length;i++)
+            for (int i = 0; i < lauseOsad.Length; i++)
             {
                 if (isBig == true)
                 {
@@ -492,10 +493,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             string töödeldudLause = string.Join(',', lauseOsad);//.Join() liidab stringid kokku üheks lauseks, võttes parameetriks tähe char
                                                                 //ja liidetavad elemendid loendina.
             Console.WriteLine(töödeldudLause);
-           
+
             // + on kahe stringi vahel konkateneerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi lõppu järgmise
             // stringi tema algusest et neid kahte ühendada
-            List<string> mingiLoend = new List<string>() {"kiluvõileib","vastlakukkel","hernesupp"};
+            List<string> mingiLoend = new List<string>() { "kiluvõileib", "vastlakukkel", "hernesupp" };
             string väljundLause = "Need on meie menüüs:";
             foreach (var söök in mingiLoend)
             {
@@ -522,8 +523,8 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             Console.WriteLine("AaF\ba");                    // \b kusutab \ble eelneva tähe kui \b on keset sõne
             Console.WriteLine(" \" ");                      // \" kuvab teksti sisse '"'
             Console.WriteLine(" \' ");                      // \' kuvab teksti sisse "'"
-            Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
-            Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. Kui sõne on pikem kui parameeter, ei lisata midagi
+            Console.WriteLine("|" + amet.PadLeft(30) + "|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
+            Console.WriteLine("|" + amet.PadRight(30) + "|");   // kuni parameetris asuva arvuni. Kui sõne on pikem kui parameeter, ei lisata midagi
             Console.WriteLine("""
                 aaaaaaaaaaa
                 aaaaaaaaaaaaaa
@@ -589,15 +590,15 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                                     //andmete andmetüüp, antud juhul on siin täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid
                                                     //hoitakse, on "arvuloend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
                                                     //loend täisarvudega.
-            // Teine tekitusviis
-            List<int> arvuLoend2 = new List<int>() {1,2,3};     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga.
-                                                                //Listi noolsulgude vahel on loendis olevate andmete andmetüüp, antud juhul on siin
-                                                                //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse, on "arvuloend2". Sellesse
-                                                                //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid pärast
-                                                                //andmetüübi gaga oleaid sulge, anname loogiliste sulgude vahel talle kaasa kohe ka elemendid.
-                                                                //Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegua PIKKUSETA EGA TÜHJA loendiga,
-                                                                //vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes selle mitu elementi on kaasa antud.
-            // Kolmas tekitusviis:
+                                                    // Teine tekitusviis
+            List<int> arvuLoend2 = new List<int>() { 1, 2, 3 };     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga.
+                                                                    //Listi noolsulgude vahel on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                    //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse, on "arvuloend2". Sellesse
+                                                                    //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid pärast
+                                                                    //andmetüübi gaga oleaid sulge, anname loogiliste sulgude vahel talle kaasa kohe ka elemendid.
+                                                                    //Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegua PIKKUSETA EGA TÜHJA loendiga,
+                                                                    //vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes selle mitu elementi on kaasa antud.
+                                                                    // Kolmas tekitusviis:
             List<int> arvuLoend3 = new List<int>(3);       //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga.
                                                            //Listi noolsulgude vahel on loendis olevate andmete andmetüüp, antud juhul on siin
                                                            //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse, on "arvuloend2". Sellesse
@@ -644,7 +645,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // ja olemasolevatest andmetest uuesti.
             Tuple<string, string> piparmündiTupla = new Tuple<string, string>("Vasak tupla", "Parem tupla");
             // Esimene tekitusviis:
-            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>( true, 2, "abc" );
+            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>(true, 2, "abc");
             //Andmetüübi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool teiseks int ja kolmandaks string tüüpi
             //objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud sõna new ja andmetüübi täiskirjeldus "Tuple<bool, int, string>" vajab peale seda
             //sulgude vahele esmaseid andmeid. Antud juhul on siin (true, 2, "abc");
@@ -691,7 +692,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // true         typeof      uint        ulong       unchecked   unsafe      ushort      using       virtual         void            volatile    while
 
             // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            
+
             ///* -= M U U T U J A D =-   */
             ////string string = "abc"; //bad
             //string sõna = "abc"; //very gud
@@ -706,7 +707,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                                    // 3 - omistusoperaator mis annab muutujale andmed sisse
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
-            //                    6
+                                   //                    6
             List<bool> näidis2 = new List<bool>();  // 6 - kaitstud sõna "new" kasutatakse siis kui tahetakse instantseerida uude muutujasse
                                                     //     väärtust mille andmetüüp on kompleksne, ja vajab konstruktori väljakutset
                                                     //     komplekssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
@@ -912,6 +913,66 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                 Console.WriteLine(üksSõna);     //antud juhul, kuvatakse element välja
             }
             //NB - tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud
+
+            /* -= F a i l i o p e r a t s i o o n i d =- */
+
+            // Kui programmil on vaja oma töö tulemust salvestada või lugeda mingeid andmeid sisse mis ei pärine kasutajalt ega programmilt endalt,
+            // on võimalus need andmed sisse lugeda failist või siis talletada andmeid failis.
+            // Failioperatsioonide tegemiseks on vaja kasutada usinguna Süsteemi in-out operatsioone, see tuleb moodulist System.IO
+
+            /* LUGEMINE */
+
+            string loetudFailiSisu = File.ReadAllText("failinimi.txt");
+            //ReadAllText("failinimi.laiend") - loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu tekstina
+            string[] loetudFailiSisu2 = File.ReadAllLines("failinimi.txt");
+            //ReadAllLines("failinimi.laiend") - loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu stringide järjendina,
+            //kus iga element on üks rida kogu failist.
+            byte[] loetudFailibaidid = File.ReadAllBytes("failinimi.txt");
+            //ReadAllBytes("failinimi.laiend") - loeb kirjeldatud failist, mis asub programmiga täpselt samas kaustas, kogu sisu baitidena
+
+            /* KIRJUTAMINE */
+
+            File.WriteAllText("/väljund.txt", loetudFailiSisu);
+            //WriteAllText("väljundfail.laiend", "sisu mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //kus on tekst, mis asub teise parameetri sees
+            File.WriteAllLines("/väljund2.txt", loetudFailiSisu2);
+            //WriteAllLines("väljundfail2.laiend", "sisu mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //kus on sisu stringide järjendist, mis asub teise parameetri sees
+            File.WriteAllBytes("/väljundbaidid.txt", loetudFailibaidid);
+            //WriteAllBytes("väljundbaidid.laiend", "sisu mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili
+            //mis koosneb järjendis olevatest baitidest, mis asub teise parameetri sees
+
+            //Kõik kirjutamismeetodid kirjutavad vaikimisi juba samanimelise eksisteeriva faili üle, kui fail eksisteerib. Kui fail ei eksisteeri, see tekitatakse.
+
+            /* MUUD */
+
+            File.Exists("/väljund.txt");
+            //Exists("/väljundfail.laiend") - kontrollib kas selles asukohas on olemas sellise nimega ja sellise laiendiga fail.
+            //Kui on, tagastab "true",
+            //kui ei ole, tagastab "false"
+
+            File.Delete("/väljund.txt");
+            //Delete("/väljundfail.laiend") - kustutab kindlas asukohas ärakirjeldatud faili
+
+            File.Create("/väljund.txt");
+            //Create("/väljundfail.laiend") - tekitab uue tühja faili, valitud asukohta valitud laiendiga. Kui see fail juba on olemas, siis olemasolev
+            //fail tühjendatakse, ehk trunkeeritakse
+
+            File.Copy("/väljund.txt", "/väljundCOPY.txt");
+            //Copy("/väljundfail.laiend","/väljundCOPY.txt") - tekitab uue samasuguse faili, esimese parameetrina kirjeldatud failist ja asukohast
+            //ning asetab ta teise parameetrisse seatud asukohta, failnime ja laiendiga
+
+            File.Copy("/väljund.txt", "/väljundCOPY.txt", false);
+            //Copy("/väljundfail.laiend","/väljundCOPY.txt", bool ülekirjutaja) - tekitab uue samasuguse faili, esimese parameetrina kirjeldatud failist ja asukohast
+            //ning asetab ta teise parameetrisse seatud asukohta, failnime ja laiendiga, kui fail juba on olemas, siis false
+            //puhul on ülekirjutamine keelatud, true puhul ülekirjutamine lubatud
+
+            File.Replace("/väljund.txt","/sihtfail.txt","/sihtfailBACKUP.txt");
+            //Replace, asendab esimeses parameetris oleva faili sisu, kirjutab uue faili, teise parameetri asukohta, kustutades originaalse faili,
+            //ja asetab ka backup faili.
+
+            File.AppendText("/väljund.txt");
+            //AppendText lisab olemasolevale failile juurde sisu parameetris spetsifitseeritud failile. Kui fail ei eksisteeri enam, tekitatakse see uuesti
         }
         /* -= M E E T O D I D =-   */
 
@@ -950,7 +1011,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
         // mitte kus ta käib ega mõni muu kõrvaline või arusaamatu asi. Näide: kui arendaja kirjutab meetodi nimega "A()", siis see meetodi nimi
         // ei ütle ta meeskonnakaaslastele/talle endale tulevikus mitte midagi, aga meetodi nimi "ArvutaArvudKokku" ütleb selgelt ära, mille
         // jaoks meetod on. Ta ei raiska oma aega meetodi sisse vaatamiseks, et lugeda koodi ning ise nuputada mida meetod teeb.
-        
+
         //      - Parameetrid on väljad mis ütlevad mida meetodil meetodi tööks vaja on, ning mis on vaja sulgude vahele lisada meetodi
         // väljakutseasukohas. Parameetri muutuja nimi võib olla väljendatud teistmoodi kui selle meetodiga kasutatavad andmed ise.
         // Parameetreid on kahte sorti, kohustuslikud ja optional ehk valikuline. Valikulise parameetri väljendusel pannakse andmetüübi taha
