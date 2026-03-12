@@ -11,7 +11,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
 {
     internal class Program  // <-- programmi klass, mis on ka omakorda konteiner tüüp, kus sees on kogu programmi kood
     {
-        // 5 - Struct
+        /* 5 - Struct */
         //Struct/Struktuur on komposiitandmetüüp mis sarnaneb klassiga selle poolest, et erinevalt kõikidest teistest andmetüüpidest, saab struktuur sisaldada
         //meetodeid ning omadusi. Sarnaselt klassiga, on struct andmetüübil ka konstruktor, mis ütleb mis selle struktuuri sees on.
 
@@ -25,6 +25,8 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
         //     omada täielikult erinevaid välju.
         // D - Struktuuri omadused, nende kaudu saab kasutatavalt koodis selle struktuuri andmeid kätte. Adresseeritakse nagu meetodeid teistest
         //     andmetüüpidest punkti abil, ning peale punkti saab valida soovitud välja.
+        //     "Get();" (D.1) on vaikemeetodi, mis tagastab välja andmed ning "Set();" (D.2) laseb seda seada kui ei ole sellele väljale väärtust
+        //     antud. (D.3)
         // E - Struktuuris asuvad meetodid, saab kirjutada üle overrideiga vaikemeetodeid või saab omada struktuurile omaseid meetodeid
 
         //A.1    A.2      A.3
@@ -41,9 +43,10 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
                  X = x; //C selles kontruktoris on kaks andmevälja
                  Y = y;
             }
+            //                D.1  D.2
             public double X { get; set; } //D - struktuuri omadused
             public double Y { get; set; }
-            public double Z { get; set; }
+            public double Z { get; set; } = 0;//D.3
             //E selle "kordinaat" struct meetodid.
             public override string ToString() 
             {
@@ -53,6 +56,16 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             {
                 Console.WriteLine("Hello world.");
             }
+        }
+
+        /* 5 - ENUM */
+        // Enum on spetsiaalset tüüpi klass, mis koosneb ainult readonly muutmatutest väärtustest. Sarnaselt muude objektide addresseerimisega saab enumi seest
+        // tema muutujaid lugeda punkti abil. Enum kujutab endast tegelikult täisarvude loendit, millele on antud inimloetavad nimed.
+        enum HäireTase
+            //enum sätestatakse kaitstud sõnaga "enum", seejärel enumi enda nimi ("HäireTase") ning sellele järgnevas koodiplokis enumi enda väärtused.
+            //eraldatune komadega.
+        {
+            Madal, Keskmine, Kõrge, Kriitiline
         }
         static void Main(string[] args) // <-- "Main" on programmi sees olev meeotd mid vaikeväärtusena alati käivitatakse, kui ei ole teist meetodit käivituseks määratud
         {
@@ -468,6 +481,17 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
 
             Kordinaat satelliidiPunkMaakohal = new Kordinaat(54.6, 88.65);
             Console.WriteLine(satelliidiPunkMaakohal.ToString());
+
+            //Teeme auto
+            Car minuParsa = new Car(
+                "Yaris",
+                CarMark.Toyota,
+                "ABC 123",
+                "kole roosa",
+                (decimal) 1.67,
+                new List<string>{"uksed", "aknad"});
+            Console.WriteLine(minuParsa.GetInfo());
+            minuParsa.SeeEquipment();
 
             /*
             Harjutused
@@ -921,7 +945,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // While tsükkel on kõige tüüpilisem laadi tsükkel, tal on tingimusekontroll esimese ringi alguses, kuid tsükkel ei oma sisseehitatud tsüklimuutujat,
             // selle peab sätestama programmeerija
             string tsükliMuutuja2 = "10";                // Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikk väärtust ehk tsüklimuutuja
-            while (tsükliMuutuja2 != "0") ;               // "While" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
+            while (tsükliMuutuja2 != "0");               // "While" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev
                                                           // tingimusekontroll, kus kontrollitakse tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true"
                                                           // tsükkel töötab veel ühe ringi, kui tingiumus ei täitu, siis ei täideta ka järgnevat ringi, ning
                                                           // tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega, kus on tähemärk arvu 0 jaoks
