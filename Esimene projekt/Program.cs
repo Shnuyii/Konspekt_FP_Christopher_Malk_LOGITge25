@@ -4,15 +4,60 @@ using System;
 using System.Net.Http.Headers;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Text; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
+using System.Text;
+using System.Security.Cryptography.X509Certificates; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
 
 namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "Esimene_projekt"
 {
     internal class Program  // <-- programmi klass, mis on ka omakorda konteiner tüüp, kus sees on kogu programmi kood
     {
+        // 5 - Struct
+        //Struct/Struktuur on komposiitandmetüüp mis sarnaneb klassiga selle poolest, et erinevalt kõikidest teistest andmetüüpidest, saab struktuur sisaldada
+        //meetodeid ning omadusi. Sarnaselt klassiga, on struct andmetüübil ka konstruktor, mis ütleb mis selle struktuuri sees on.
+
+        // Struct anatoomia:
+        // A - Structi jaoks vajalik nimeruumi tekitamine, mis sarnaselt meetodile vajab juurdepääsu modifikaatorit (A.1), andmetüübi nime (A.2) ja
+        //     sätestust et tegu on structiga (A.3). Sätestusele järgned koodiplokk/konteiner
+        // B - Konstruktor (on sama nagu klassil) ning defineerib ära spetsiaalse meetodi mis ütleb kuidas *see* struct instanteeritakse
+        //     Konstruktorit kasutatakse antud juhul structis olevatele väljadele mingite algandmete sisestuseks. Konstruktoreid saab olla mitu
+        //     "Kordinaat" structil on kaks konstruktorit, esimene kolmemõõtmeline, teine kahemõõtmeline
+        // C - Andmeväljad ütlevad ära, millised andmed uuel structil on. Olenevalt konstruktorist võib andmevälju olla rohkem või vähem, või
+        //     omada täielikult erinevaid välju.
+        // D - Struktuuri omadused, nende kaudu saab kasutatavalt koodis selle struktuuri andmeid kätte. Adresseeritakse nagu meetodeid teistest
+        //     andmetüüpidest punkti abil, ning peale punkti saab valida soovitud välja.
+        // E - Struktuuris asuvad meetodid, saab kirjutada üle overrideiga vaikemeetodeid või saab omada struktuurile omaseid meetodeid
+
+        //A.1    A.2      A.3
+        public struct Kordinaat //A
+        {
+            public Kordinaat(double x, double y, double z) //B kui andmeid ei anta kaasa, siis vaikeväärtusena kasutatakse kõige esimest konstruktorit
+            {
+                 X = x; //C selles konstruktoris on kolm andmevälja
+                 Y = y;
+                 Z = z;
+            }
+            public Kordinaat(double x, double y) //B.1
+            {
+                 X = x; //C selles kontruktoris on kaks andmevälja
+                 Y = y;
+            }
+            public double X { get; set; } //D - struktuuri omadused
+            public double Y { get; set; }
+            public double Z { get; set; }
+            //E selle "kordinaat" struct meetodid.
+            public override string ToString() 
+            {
+                return $"({X},{Y},{Z})";
+            }
+            public void HelloWorld()
+            {
+                Console.WriteLine("Hello world.");
+            }
+        }
         static void Main(string[] args) // <-- "Main" on programmi sees olev meeotd mid vaikeväärtusena alati käivitatakse, kui ei ole teist meetodit käivituseks määratud
         {
-            ///* näiteprogramm 1*/
+
+            //* näiteprogramm 1*/
             //int palk = 2465;
             //int kulud = 1452;
 
@@ -415,6 +460,15 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //    Console.WriteLine(displayableData);
             //}
 
+            Kordinaat minuAsukoht = new Kordinaat(); //Teeme uue muutuja "minuAsukoht" mille andmetüüp ongi meie enda struct.
+                                                     //Kaitstud sõna "new" sinna sisse uue tühja kordinaadi
+            minuAsukoht.X = 67;     //Lisame oma uuele Kordinaadile X kordinaadi 
+            minuAsukoht.Y = 0;      //Lisame ka Y kordinaadi
+            minuAsukoht.Z = 9.5;    //Ning ka Z kordinaadi
+
+            Kordinaat satelliidiPunkMaakohal = new Kordinaat(54.6, 88.65);
+            Console.WriteLine(satelliidiPunkMaakohal.ToString());
+
             /*
             Harjutused
 
@@ -423,7 +477,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             Teooria
             */
 
-
+            Console.ReadLine();
 
 
             ///* -= S Ü N T A K S =-   */
@@ -552,6 +606,7 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             //2. Loend
             //3. Sõnastik
             //4. Tuple
+            //5. Struct
 
             /* 1 - MASSIIV */
             // [] - > Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. massiivi tähistatakse kantsulgudega.
@@ -662,12 +717,15 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
             // muutujad ".Item1" millega me saame adresseerida soovitud objekti.
             // NB! erinevalt loendist ja massiivist, algab lugemine arvust 1, ehk esimene Item ei ole Item0, vaid Item1.
             string pool1 = piparmündiTupla.Item1; // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
-            string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti, ning
+            string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti
 
-            //*  -= J U H U A R V =-    *//
-            //
-            // Random klass annab võimaluse programmeerijale genereerida pseudo-random väärtusi
-            Random juhuArv = new Random();      //klassinimi "Random" on kasutatav kui andmetüüpi, mis ütleb et järgnevas muutujas nimega "juhuArv" on
+            /* 5 - STRUKTUUR*/
+            // Faili alguses
+
+        //*  -= J U H U A R V =-    *//
+        //
+        // Random klass annab võimaluse programmeerijale genereerida pseudo-random väärtusi
+        Random juhuArv = new Random();      //klassinimi "Random" on kasutatav kui andmetüüpi, mis ütleb et järgnevas muutujas nimega "juhuArv" on
                                                 //uus random tüüpi objekt, mis omistatakse sinna "new Random()" käsuga. Konstruktor ulatab muutuja sisse
                                                 //Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude generaatorina
                                                 //millest punkti abil saab adresseerida Random genereerimise tööriistu.
