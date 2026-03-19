@@ -10,9 +10,9 @@ namespace Esimene_projekt
     {
         Toyota, Ford, Trashla, Subaru, Saab, Volvo, BMW, Mini, Škoda,
     }
-    public class Car
+    public class Vehicle
     {
-        public Car(
+        public Vehicle(
             string model,
             CarMark mark,
             string plate,
@@ -38,7 +38,8 @@ namespace Esimene_projekt
         /// Returns info about this car
         /// </summary>
         /// <returns>Human readable sentence as a string</returns>
-        public string GetInfo()
+        public virtual string GetInfo()
+            //baasklassi meetod "GetInfo" omab kaitstud sõna virtual, mis laseb siin klassis olevat meetodit, seda klassi pärinevatel kaitstud sõnaga "override" asendada.
         {
             return $"This is a {Mark} model, it is {Colour} color and weighs {EmptyWeight} tons. \nLicense plate number is {LicensePlate}";
         }

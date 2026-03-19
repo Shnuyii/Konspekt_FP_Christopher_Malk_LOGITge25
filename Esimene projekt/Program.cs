@@ -6,7 +6,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Text;
 using System.Security.Cryptography.X509Certificates;
-using ClassLibrary1; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
+using ClassLibrary1;
+using Esimene_projekt.Vehicles; // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele. süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. teised projektid viidatakse tavalist solution (.sln) failist.
 
 namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "Esimene_projekt"
 {
@@ -496,6 +497,15 @@ namespace Esimene_projekt  // <-- Nimeruum, sisaldab {} sulgude vahel konteineri
 
             Class1 thingForMe = new Class1("teginuueprojekti");
             thingForMe.WhatsTheWord();
+
+            Rong minuRong = new Rong(
+                "Yaris", CarMark.Toyota,
+                "ABC 123",
+                "vene kollane",
+                (decimal) 1.67,
+                new List<string> {"vagunid","midagi"}
+                );
+            minuRong.GetInfo();
 
             /*
             Harjutused
